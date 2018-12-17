@@ -1,0 +1,141 @@
+<div class="container-show">
+  <% if user_signed_in? %>
+  <div class="admin-link">
+    <p><%= link_to "NOUVEL OBJET", new_mobilier_path  %> / <%= link_to "MODIFIER L'OBJET", edit_mobilier_path(@mobilier)%> / <%= link_to "SUPPRIMER CET OBJET", mobilier_path(@mobilier), :method => :delete %> </p>
+  </div>
+  <% end %>
+  <div class="navigation">
+    <p><%= link_to "ACCUEIL", "/"  %> / <%= link_to "MOBILIER", mobiliers_path  %> / <%= @mobilier.titre.upcase %></p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 div col-sm-12 col-md-6">
+      <!-- Place somewhere in the <body> of your page -->
+<div id="mslider" class="flexslider">
+  <ul class="slides slides-container">
+    <li><img src="<%= cl_image_path  @mobilier.mphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
+    <li>
+      <% if @mobilier.mpictures[0].present? %>
+
+      <img src="<%= cl_image_path @mobilier.mpictures[0].mpicture_url(:mobiliers_image)%>">
+    </li>
+      <% end %>
+    <li>
+      <% if @mobilier.mpictures[1].present? %>
+      <img src="<%= cl_image_path @mobilier.mpictures[1].mpicture_url(:mobiliers_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @mobilier.mpictures[2].present? %>
+      <img src="<%= cl_image_path @mobilier.mpictures[2].mpicture_url(:mobiliers_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @mobilier.mpictures[3].present? %>
+      <img src="<%= cl_image_path @mobilier.mpictures[3].mpicture_url(:mobiliers_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @mobilier.mpictures[4].present? %>
+      <img src="<%= cl_image_path @mobilier.mpictures[3].mpicture_url(:mobiliers_image)%>" />
+    </li>
+     <% end %>
+    <!-- items mirrored twice, total of 12 -->
+  </ul>
+</div>
+<div id="mcarousel" class="flexslider">
+  <ul class="slides">
+    <li><img src="<%= cl_image_path  @mobilier.mphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
+    <li>
+      <% if @mobilier.mpictures[0].present? %>
+      <img src="<%= cl_image_path @mobilier.mpictures[0].mpicture_url(:mobiliers_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @mobilier.mpictures[1].present? %>
+      <img src="<%= cl_image_path @mobilier.mpictures[1].mpicture_url(:mobiliers_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @mobilier.mpictures[2].present? %>
+      <img src="<%= cl_image_path @mobilier.mpictures[2].mpicture_url(:mobiliers_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @mobilier.mpictures[3].present? %>
+      <img src="<%= cl_image_path @mobilier.mpictures[3].mpicture_url(:mobiliers_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @mobilier.mpictures[4].present? %>
+      <img src="<%= cl_image_path @mobilier.mpictures[3].mpicture_url(:mobiliers_image)%>" />
+    </li>
+     <% end %>
+    <!-- items mirrored twice, total of 12 -->
+  </ul>
+</div>
+
+    </div>
+    <div class="col-xs-12 div col-sm-12 col-md-4 show-description">
+        <h1><%= @mobilier.titre %></h1>
+        <h3><%= @mobilier.prix %>€</h3>
+        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assemble
+          <%= @mobilier.description %></p>
+        <div class="btn-dispo">
+          <%= link_to "Disponibilté", "/", class: "btn-dispo"  %>
+
+        </div>
+    </div>
+  </div>
+</div>
+<div class="nouveaute-container">
+  <div class="row">
+    <div class="col xs-12 center">
+      <hr class="fancy-line"><h1>AUTRES RECOMMANDATIONS</h1><hr class="fancy-line">
+    </div>
+  </div>
+    <div class="row center-card">
+      <% @mobiliers[0..2].each do |objet| %>
+
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path objet.mphoto, height: 150, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= objet.titre.upcase %></h2>
+      <p><%= objet.prix %>€</p>
+
+      <%= link_to "Voir le produit", mobilier_path(objet), class: "link-cover"  %>
+
+
+    </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#mcarousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 100,
+    itemMargin: 5,
+    asNavFor: '#mslider',
+    directionNav:false,
+  });
+
+  $('#mslider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#mcarousel",
+    directionNav:false,
+  });
+  });
+</script>

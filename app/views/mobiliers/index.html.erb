@@ -1,0 +1,130 @@
+<div class="image-verrerie navigation admin-link">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVEL OBJET", new_mobilier_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / MOBILIER </p>
+  <h1>MOBILIER</h1>
+  <div class="first-image mobilier-img">
+
+  </div>
+  <div class="link-products cursor">
+    <ul>
+      <li id="1">TOUS LES ARTICLES</li>
+      <li id="2">CANAPÉS</li>
+      <li id="3">FAUTEUILS</li>
+      <li id="4">CHAISES</li>
+      <li id="5">TABLES BASSES</li>
+      <li id="6">BANCS</li>
+    </ul>
+  </div>
+  <div id="div1"class="row">
+      <% @mobiliers.each do |mobilier| %>
+      <% if mobilier.visible === true %>
+
+
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path mobilier.mphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= mobilier.titre.upcase %></h2>
+      <p><%= mobilier.prix %>€</p>
+      <%= link_to "Voir le produit", mobilier_path(mobilier), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div id="div2"class="row">
+      <% @mobiliers.each do |mobilier| %>
+      <% if mobilier.visible === true && mobilier.categorie === "Assiette" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path mobilier.mphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= mobilier.titre.upcase %></h2>
+      <p><%= mobilier.prix %>€</p>
+      <%= link_to "Voir le produit", mobilier_path(mobilier), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div id="div3"class="row">
+      <% @mobiliers.each do |mobilier| %>
+       <% if mobilier.visible === true && mobilier.categorie === "Couvert" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path mobilier.mphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= mobilier.titre.upcase %></h2>
+      <p><%= mobilier.prix %>€</p>
+      <%= link_to "Voir le produit", mobilier_path(mobilier), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+    <div id="div4"class="row">
+      <% @mobiliers.each do |mobilier| %>
+       <% if mobilier.visible === true && mobilier.categorie === "Tasse" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path mobilier.mphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= mobilier.titre.upcase %></h2>
+      <p><%= mobilier.prix %>€</p>
+      <%= link_to "Voir le produit", mobilier_path(mobilier), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+    <div id="div5"class="row">
+      <% @mobiliers.each do |mobilier| %>
+       <% if mobilier.visible === true && mobilier.categorie === "Plat" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path mobilier.mphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= mobilier.titre.upcase %></h2>
+      <p><%= mobilier.prix %>€</p>
+      <%= link_to "Voir le produit", mobilier_path(mobilier), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div id="div6"class="row">
+      <% @mobiliers.each do |mobilier| %>
+       <% if mobilier.visible === true && mobilier.categorie === "Plat" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path mobilier.mphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= mobilier.titre.upcase %></h2>
+      <p><%= mobilier.prix %>€</p>
+      <%= link_to "Voir le produit", mobilier_path(mobilier), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+</div>
