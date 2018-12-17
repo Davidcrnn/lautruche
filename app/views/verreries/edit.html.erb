@@ -1,0 +1,66 @@
+ <div class="container container-margin">
+  <h1>MODIFIER CET OBJET</h1>
+<div class="row">
+  <div class="col-md-12">
+<%= simple_form_for(@verrerie, :html => { multipart: true }) do |f| %>
+ <% if @verrerie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@verrerie.errors.count, "erreur") %> empêchent l'objet d'être modifié:</h2>
+
+      <ul>
+      <% @verrerie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container-form">
+    <div class="champs">
+      <%= f.input :titre, label: 'TITRE' %>
+      <%= f.input :description, label: 'DESCRIPTION' %>
+      <%= f.input :categorie, collection: ["Vase", "Verre", "Carafe"], label: 'CATEGORIE', placeholder: "Choisissez une catégorie" %>
+      <%= f.input :prix, label: 'PRIX' %>
+      <%= f.input :visible, as: :select, label: 'VISIBLE' %>
+      <%= f.input :photo, label: "PHOTO PRINCIPALE", placeholder: 'Oui' %>
+      <%= f.input :photo_cache, as: :hidden %>
+    </div>
+  <div class="photo-display">
+      <img src="<%= cl_image_path  @verrerie.photo, height: 250, width: 400, crop: :fill%>" alt="">
+    </div>
+
+   <%= f.fields_for :picture do |ff| %>
+    <div class="field">
+      <%= ff.label :picture %><br>
+      <%= ff.file_field :picture, multiple: true, name: "pictures[]" %>
+    </div>
+  <% end %>
+
+    <div class="actions btn-margin">
+      <%= f.button :submit, 'MODIFIER', class: "btn-form" %>
+    </div>
+    <% end %>
+
+
+    <% if @verrerie.id %>
+    <div class="row">
+  <% @verrerie.pictures.each do |picture| %>
+      <div class="col-xs-12 col-md-3">
+    <%= image_tag picture.picture_url(:verreries_thumbnail) %><br>
+    <%= link_to "Supprimez", picture_path(picture), :method => :delete, class: "btn-suppprimez" %><br>
+
+      </div>
+  <% end %>
+<% end %>
+    </div>
+  </div>
+
+    <%= link_to "SUPPRIMEZ CET OBJET", verrery_path(@verrerie), :method => :delete, class: 'btn-form-delete'   %>
+<p><%= link_to "RETOUR À L'ANNONCE", verrery_path(@verrerie), class: 'btn-form-delete'  %></p>
+
+     </div>
+</div>
+</div>
+
+
+</div>

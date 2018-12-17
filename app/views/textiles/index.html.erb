@@ -1,0 +1,188 @@
+<div class="image-verrerie navigation admin-link">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVEL OBJET", new_textile_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / TEXTILE</p>
+  <h1>TEXTILE</h1>
+  <div class="first-image textile-img">
+
+  </div>
+  <div class="link-products cursor">
+    <ul>
+      <li id="1te">TOUS LES ARTICLES</li>
+      <li id="2te">COUSSINS</li>
+      <li id="3te">PLAIDS</li>
+      <li id="4te">DESSOUS DE LIT</li>
+      <li id="5te">NAPPES</li>
+      <li id="6te">RIDEAUX</li>
+      <li id="7te">TAPIS</li>
+    </ul>
+  </div>
+  <div id="div1te"class="row">
+      <% @textiles.each do |textile| %>
+      <% if textile.visible === true %>
+
+
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= textile.titre.upcase %></h2>
+      <p><%= textile.prix %>€</p>
+      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div id="div2te"class="row">
+      <% @textiles.each do |textile| %>
+      <% if textile.visible === true && textile.categorie === "Coussin" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= textile.titre.upcase %></h2>
+      <p><%= textile.prix %>€</p>
+      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div id="div3te"class="row">
+      <% @textiles.each do |textile| %>
+       <% if textile.visible === true && textile.categorie === "Plaid" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= textile.titre.upcase %></h2>
+      <p><%= textile.prix %>€</p>
+      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+    <div id="div4te"class="row">
+      <% @textiles.each do |textile| %>
+       <% if textile.visible === true && textile.categorie === "Dessous de lit" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= textile.titre.upcase %></h2>
+      <p><%= textile.prix %>€</p>
+      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+
+    <div id="div5te"class="row">
+      <% @textiles.each do |textile| %>
+       <% if textile.visible === true && textile.categorie === "Nappe" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= textile.titre.upcase %></h2>
+      <p><%= textile.prix %>€</p>
+      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div id="div6te"class="row">
+      <% @textiles.each do |textile| %>
+       <% if textile.visible === true && textile.categorie === "Rideau" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= textile.titre.upcase %></h2>
+      <p><%= textile.prix %>€</p>
+      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div id="div7te"class="row">
+      <% @textiles.each do |textile| %>
+       <% if textile.visible === true && textile.categorie === "Tapis" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= textile.titre.upcase %></h2>
+      <p><%= textile.prix %>€</p>
+      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+    $("#div2te,#div3te,#div4te,#div5te,#div6te,#div7te").css('display', 'none');
+
+  $("#1te").on('click', function() {
+   $("#div1te").fadeIn(1200,"swing");
+   $("#div2te,#div3te,#div4te,#div5te,#div6te,#div7te").fadeOut(1200,"swing");
+});
+$("#2te").on('click', function() {
+   $("#div2te").fadeIn(1200,"swing");
+   $("#div1te,#div3te,#div4te,#div5te,#div6te,#div7te").fadeOut(1200,"swing");
+});
+$("#3te").on('click', function() {
+   $("#div3te").fadeIn(1200,"swing");
+   $("#div1te,#div2te,#div4te,#div5te,#div6te,#div7te").fadeOut(1200,"swing");
+});
+$("#4te").on('click', function() {
+   $("#div4te").fadeIn(1200,"swing");
+   $("#div1te,#div2te,#div3te,#div5te,#div6te,#div7te").fadeOut(1200,"swing");
+});
+$("#5te").on('click', function() {
+   $("#div5te").fadeIn(1200,"swing");
+   $("#div1te,#div2te,#div3te,#div4te,#div7te,#div6te").fadeOut(1200,"swing");
+});
+$("#6te").on('click', function() {
+   $("#div6te").fadeIn(1200,"swing");
+   $("#div1te,#div2te,#div3te,#div4te,#div5te,#div7te").fadeOut(1200,"swing");
+});
+$("#7te").on('click', function() {
+   $("#div7te").fadeIn(1200,"swing");
+   $("#div1te,#div2te,#div3te,#div4te,#div5te,#div6te").fadeOut(1200,"swing");
+});
+
+
+});
+
+</script>

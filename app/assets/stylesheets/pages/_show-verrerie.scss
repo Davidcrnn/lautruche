@@ -1,0 +1,43 @@
+.container-show {
+  height: auto;
+  margin: 70px;
+}
+
+.show-description p {
+  word-wrap: break-word;
+}
+
+.center {
+  text-align: center;
+  float: none;
+  margin: 0 auto;
+  h1 {
+    font-size: 20px;
+  }
+}
+
+
+.nouveaute-container {
+  margin: 0 200px;
+}
+
+
+
+.btn-dispo {
+  margin-top: 30px;
+  color: black;
+ a {
+  border: 2px solid black;
+  padding: 10px 20px;
+  color: black;
+ } &:hover {
+  text-decoration: none;
+  opacity: 0.6;
+}
+}
+
+.admin-link a {
+  color: black;
+  // padding-left: 3px;
+
+}

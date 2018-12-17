@@ -1,0 +1,52 @@
+<div class="header-form">
+  <h1>CONTACTEZ-NOUS</h1>
+</div>
+<div class="container-form-contact">
+  <div class="row contact-center">
+   <!--  <div class="col-xs-12 col-md-6 ">
+      <ul class="element-contact">
+        <li>Les Autruches</li>
+        <li>Adresse: 33 rue Boulard 75014 Paris</li>
+        <li>Téléphone: 01 45 45 34 34</li>
+      </ul>
+    </div> -->
+    <div class="col-xs-12 col-md-6 contact-form-center">
+        <div class="contact-container">
+  <div class="row">
+  <%= simple_form_for @contact do |f| %>
+  <div class="row col-xs-12">
+    <%= f.input :nom, label: 'NOM', :required => true, :input_html => {:class => 'input-style'} %>
+
+  </div>
+  <div class="row col-xs-12">
+    <%= f.input :email, label: 'ADRESSE EMAIL',:required => true, :input_html => {:class => 'input-style'} %>
+
+  </div>
+  <div class="row col-xs-12">
+    <%= f.input :telephone, label: 'TELEPHONE',:required => true, :input_html => {:class => 'input-style'} %>
+
+  </div>
+  <div class="row col-xs-12">
+    <%= f.input :message, label: 'MESSAGE', :as => :text, :required => false, :input_html => {:rows => 5, :class => 'input-style'} %>
+
+  </div>
+    <div class="form-actions">
+    <div class="hidden">
+    <%= f.input :nickname %>
+    </div>
+      <%= f.button :submit, 'ENVOYÉ', :class=> "button" %>
+      <br><br>
+
+    </div>
+  <% end %>
+
+  </div>
+
+</div>
+    </div>
+  </div>
+</div>
+<div class="footer-form">
+  <p><em>*Les informations communiquées sont destinées à la société éditrice de ce site. Vous bénéficiez d'un droit d'accès, de modification, de rectification et de suppression de vos données personnelles (Loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique). Pour les exercer, adressez-vous à l'adresse de l'Editeur.</em></p>
+
+</div>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :tpictures, only: [:destroy]
   resources :textiles
   resources :tepictures, only: [:destroy]
-  resources :lyfestyles
+  resources :lifestyles
   resources :lpictures, only: [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

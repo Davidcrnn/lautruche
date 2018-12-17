@@ -1,0 +1,112 @@
+<div class="image-verrerie navigation admin-link">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVEL OBJET", new_table_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / TABLE </p>
+  <h1>TABLE</h1>
+  <div class="first-image verrerie-img">
+
+  </div>
+  <div class="link-products cursor">
+    <ul>
+      <li id="1">TOUS LES ARTICLES</li>
+      <li id="2">ASSIETTES</li>
+      <li id="3">COUVERTS</li>
+      <li id="4">TASSES</li>
+      <li id="5">PLATS</li>
+    </ul>
+  </div>
+  <div id="div1"class="row">
+      <% @tables.each do |table| %>
+      <% if table.visible === true %>
+
+
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= table.titre.upcase %></h2>
+      <p><%= table.prix %>€</p>
+      <%= link_to "Voir le produit", table_path(table), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div id="div2"class="row">
+      <% @tables.each do |table| %>
+      <% if table.visible === true && table.categorie === "Assiette" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= table.titre.upcase %></h2>
+      <p><%= table.prix %>€</p>
+      <%= link_to "Voir le produit", table_path(table), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div id="div3"class="row">
+      <% @tables.each do |table| %>
+       <% if table.visible === true && table.categorie === "Couvert" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= table.titre.upcase %></h2>
+      <p><%= table.prix %>€</p>
+      <%= link_to "Voir le produit", table_path(table), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+    <div id="div4"class="row">
+      <% @tables.each do |table| %>
+       <% if table.visible === true && table.categorie === "Tasse" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= table.titre.upcase %></h2>
+      <p><%= table.prix %>€</p>
+      <%= link_to "Voir le produit", table_path(table), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  </div>
+    <div id="div5"class="row">
+      <% @tables.each do |table| %>
+       <% if table.visible === true && table.categorie === "Plat" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= table.titre.upcase %></h2>
+      <p><%= table.prix %>€</p>
+      <%= link_to "Voir le produit", table_path(table), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="container-footer">
+  <div class="row">
+
+
+    <div class="col-xs-12 col-sm-6 col-md-3 container-navigation">
+      <h3>SUIVEZ NOUS!</h3>
+      <div class="icon-container">
+        <p><%= image_tag 'facebook.svg' %> <%= image_tag 'instagram (1).svg' %></p>
+
+
+      </div>
+    </div>
+    <div class=" col-xs-12 col-sm-6 col-md-3 container-navigation">
+      <h3>NAVIGATION</h3>
+      <ul>
+        <li><%= link_to 'Accueil', '/'  %></li>
+        <li><%= link_to "Boutiques", boutiques_path %></li>
+        <li><%= link_to "Réalisations", '/' %></li>
+        <li><%= link_to "Contact", new_contact_path  %></li>
+        <li><%= link_to "Mentions légales", '/'  %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to "Déconnexion", destroy_user_session_path  %></li>
+        <% else %>
+        <li><%= link_to "Admin", new_user_session_path  %></li>
+
+        <% end %>
+      </ul>
+    </div>
+     <div class="col-xs-12 col-sm-6 col-md-3 container-navigation">
+      <h3>PRODUITS</h3>
+       <ul>
+      <li><%= link_to "Verrerie", verreries_path %></li>
+      <li><%= link_to "Table", '/'%></li>
+      <li><%= link_to "Textile", '/'%></li>
+      <li><%= link_to "Lifestyle", '/'%></li>
+      <li><%= link_to "Mobilier", '/'%></li>
+      <li><%= link_to "Luminaires", '/'%></li>
+      <li><%= link_to "Enfants", '/'%></li>
+      <li><%= link_to "Bijoux", '/'%></li>
+      <li><%= link_to "Maroquinerie", '/'%></li>
+      <li><%= link_to "Accessoires", '/'%></li>
+    </ul>
+    </div>
+
+    <div class=" col-xs-12 col-sm-6 col-md-3 container-navigation">
+      <h3>CONTACT</h3>
+      <ul>
+        <li>Les Autruches</li>
+        <li>30 rue Boulard</li>
+        <li>75014 Paris</li>
+        <li>01 45 44 44 44</li>
+        <li>lesautruches@gmail.com</li>
+      </ul>
+    </div>
+</div>
+</div>
+
+<div class="copyright">
+  <h1>Copyright ©Les Autruches- 2018</h1>
+</div>
