@@ -1,5 +1,5 @@
   $(document).ready(function() {
-    $("#div2,#div3,#div4").css('display', 'none');
+    $(".div2,.div3,.div4").css('display', 'none');
 
   $("#1").on('click', function() {
    $("#div1").fadeIn(1200,"swing");

@@ -1,0 +1,67 @@
+ <div class="container container-margin">
+  <h1>MODIFIER CET OBJET</h1>
+<div class="row">
+  <div class="col-md-12">
+<%= simple_form_for(@mobilier, :html => { multipart: true }) do |f| %>
+ <% if @mobilier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mobilier.errors.count, "erreur") %> empêchent l'objet d'être modifié:</h2>
+
+      <ul>
+      <% @mobilier.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container-form">
+    <div class="champs">
+      <%= f.input :titre, label: 'TITRE' %>
+      <%= f.input :description, label: 'DESCRIPTION' %>
+      <%= f.input :categorie, collection: ["Canapé", "Fauteuil", "Chaise", "Table basse", "Banc"], label: 'CATEGORIE', placeholder: "Choisissez une catégorie" %>
+      <%= f.input :prix, label: 'PRIX' %>
+      <%= f.input :visible, as: :select, label: 'VISIBLE' %>
+      <%= f.input :mphoto, label: "PHOTO PRINCIPALE", placeholder: 'Oui' %>
+      <%= f.input :mphoto_cache, as: :hidden %>
+    </div>
+  <div class="photo-display">
+      <img src="<%= cl_image_path  @mobilier.mphoto, height: 250, width: 400, crop: :fill%>" alt="">
+    </div>
+
+   <%= f.fields_for :mpicture do |ff| %>
+    <div class="field">
+      <%= ff.label :mpicture %><br>
+      <%= ff.file_field :mpicture, multiple: true, name: "mpictures[]" %>
+    </div>
+  <% end %>
+
+    <div class="actions btn-margin">
+      <%= f.button :submit, 'MODIFIER', class: "btn-form" %>
+    </div>
+    <% end %>
+
+
+    <% if @mobilier.id %>
+    <div class="row">
+  <% @mobilier.mpictures.each do |mpicture| %>
+      <div class="col-xs-12 col-md-3">
+    <%= image_tag mpicture.mpicture_url(:mobiliers_thumbnail) %><br>
+    <%= link_to "Supprimez", mpicture_path(mpicture), :method => :delete, class: "btn-suppprimez" %><br>
+
+      </div>
+  <% end %>
+<% end %>
+    </div>
+  </div>
+
+    <%= link_to "SUPPRIMEZ CET OBJET", mobilier_path(@mobilier), :method => :delete, class: 'btn-form-delete'   %>
+<p><%= link_to "RETOUR À L'ANNONCE", mobilier_path(@mobilier), class: 'btn-form-delete'  %></p>
+
+     </div>
+</div>
+</div>
+
+
+</div>
+

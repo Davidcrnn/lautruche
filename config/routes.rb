@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   resources :tepictures, only: [:destroy]
   resources :lifestyles
   resources :lpictures, only: [:destroy]
+  resources :mobiliers
+  resources :mpictures, only: [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
