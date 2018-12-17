@@ -1,0 +1,95 @@
+<div class="image-verrerie navigation admin-link">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVEL OBJET", new_verrery_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / VERRERIE </p>
+  <h1>VERRERIE</h1>
+  <div class="first-image verrerie-img">
+
+  </div>
+  <div class="link-products cursor">
+    <ul>
+      <li id="1">TOUS LES ARTICLES</li>
+      <li id="2">VERRES</li>
+      <li id="3">CARAFES</li>
+      <li id="4">VASES</li>
+    </ul>
+  </div>
+  <div id="l1"class="row">
+      <% @verreries.each do |verre| %>
+      <% if verre.visible === true %>
+
+
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= verre.titre.upcase %></h2>
+      <p><%= verre.prix %>€</p>
+      <%= link_to "Voir le produit", verrery_path(verre), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div id="l2"class="row">
+      <% @verreries.each do |verre| %>
+      <% if verre.visible === true && verre.categorie === "Verre" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= verre.titre.upcase %></h2>
+      <p><%= verre.prix %>€</p>
+      <%= link_to "Voir le produit", verrery_path(verre), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div id="l3"class="row">
+      <% @verreries.each do |verre| %>
+       <% if verre.visible === true && verre.categorie === "Carafe" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= verre.titre.upcase %></h2>
+      <p><%= verre.prix %>€</p>
+      <%= link_to "Voir le produit", verrery_path(verre), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+    <div id="l4"class="row">
+      <% @verreries.each do |verre| %>
+       <% if verre.visible === true && verre.categorie === "Vase" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= verre.titre.upcase %></h2>
+      <p><%= verre.prix %>€</p>
+      <%= link_to "Voir le produit", verrery_path(verre), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,143 @@
+<div class="container-show">
+  <% if user_signed_in? %>
+  <div class="admin-link">
+    <p><%= link_to "NOUVEL OBJET", new_lifestyle_path  %> / <%= link_to "MODIFIER L'OBJET", edit_lifestyle_path(@lifestyle)%> / <%= link_to "SUPPRIMER CET OBJET", lifestyle_path(@lifestyle), :method => :delete %> </p>
+  </div>
+  <% end %>
+  <div class="navigation">
+    <p><%= link_to "ACCUEIL", "/"  %> / <%= link_to "LIFESTYLE", lifestyles_path  %> / <%= @lifestyle.titre.upcase %></p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 div col-sm-12 col-md-6">
+      <!-- Place somewhere in the <body> of your page -->
+<div id="lslider" class="flexslider">
+  <ul class="slides slides-container">
+    <li><img src="<%= cl_image_path  @lifestyle.lphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
+    <li>
+      <% if @lifestyle.lpictures[0].present? %>
+
+      <img src="<%= cl_image_path @lifestyle.lpictures[0].lpicture_url(:lifestyles_image)%>">
+    </li>
+      <% end %>
+    <li>
+      <% if @lifestyle.lpictures[1].present? %>
+      <img src="<%= cl_image_path @lifestyle.lpictures[1].lpicture_url(:lifestyles_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @lifestyle.lpictures[2].present? %>
+      <img src="<%= cl_image_path @lifestyle.lpictures[2].lpicture_url(:lifestyles_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @lifestyle.lpictures[3].present? %>
+      <img src="<%= cl_image_path @lifestyle.lpictures[3].lpicture_url(:lifestyles_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @lifestyle.lpictures[4].present? %>
+      <img src="<%= cl_image_path @lifestyle.lpictures[3].lpicture_url(:lifestyles_image)%>" />
+    </li>
+     <% end %>
+    <!-- items mirrored twice, total of 12 -->
+  </ul>
+</div>
+<div id="lcarousel" class="flexslider">
+  <ul class="slides">
+    <li><img src="<%= cl_image_path  @lifestyle.lphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
+    <li>
+      <% if @lifestyle.lpictures[0].present? %>
+      <img src="<%= cl_image_path @lifestyle.lpictures[0].lpicture_url(:lifestyles_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @lifestyle.lpictures[1].present? %>
+      <img src="<%= cl_image_path @lifestyle.lpictures[1].lpicture_url(:lifestyles_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @lifestyle.lpictures[2].present? %>
+      <img src="<%= cl_image_path @lifestyle.lpictures[2].lpicture_url(:lifestyles_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @lifestyle.lpictures[3].present? %>
+      <img src="<%= cl_image_path @lifestyle.lpictures[3].lpicture_url(:lifestyles_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @lifestyle.lpictures[4].present? %>
+      <img src="<%= cl_image_path @lifestyle.lpictures[3].lpicture_url(:lifestyles_image)%>" />
+    </li>
+     <% end %>
+    <!-- items mirrored twice, total of 12 -->
+  </ul>
+</div>
+
+    </div>
+    <div class="col-xs-12 div col-sm-12 col-md-4 show-description">
+        <h1><%= @lifestyle.titre %></h1>
+        <h3><%= @lifestyle.prix %>€</h3>
+        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assemble
+          <%= @lifestyle.description %></p>
+        <div class="btn-dispo">
+          <%= link_to "Disponibilté", "/", class: "btn-dispo"  %>
+
+        </div>
+    </div>
+  </div>
+</div>
+<div class="nouveaute-container">
+  <div class="row">
+    <div class="col xs-12 center">
+      <hr class="fancy-line"><h1>AUTRES RECOMMANDATIONS</h1><hr class="fancy-line">
+    </div>
+  </div>
+    <div class="row center-card">
+      <% @lifestyles[0..2].each do |objet| %>
+
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path objet.lphoto, height: 150, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= objet.titre.upcase %></h2>
+      <p><%= objet.prix %>€</p>
+
+      <%= link_to "Voir le produit", lifestyle_path(objet), class: "link-cover"  %>
+
+
+    </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#lcarousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 100,
+    itemMargin: 5,
+    asNavFor: '#lslider',
+    directionNav:false,
+  });
+
+  $('#lslider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#lcarousel",
+    directionNav:false,
+  });
+  });
+</script>

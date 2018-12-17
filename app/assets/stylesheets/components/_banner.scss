@@ -1,0 +1,56 @@
+.banner-container {
+  height: auto;
+  width: 100%;
+}
+
+.img-slider1 {
+  background-image: image-url('luminaire-min.jpg');
+  background-size: cover;
+  background-position: center;
+}.img-slider2 {
+  background-image: image-url('textile-min.jpg');
+  background-size: cover;
+  background-position: center;
+}.img-slider3 {
+  background-image: image-url('accessoire-min.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: calc(100vh - 125px);
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  background-size: cover;
+  background-position: center;
+  }
+

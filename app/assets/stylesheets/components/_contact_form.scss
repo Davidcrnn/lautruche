@@ -1,0 +1,69 @@
+.container-form-contact {
+  height: auto;
+  margin: 30px 100px;
+  // display: flex;
+
+}
+.header-form {
+  margin: 30px 100px;
+  text-align: center;
+  h1 {
+  font-size: 25px;
+  letter-spacing: 2px;
+  }
+}
+
+.footer-form {
+  margin: 0px 100px;
+  p {
+    font-size: 12px;
+  }
+}
+.contact-center {
+  background-image: image-url('textile-min.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-container h1 {
+  font-size: 20px;
+  margin: 0;
+}
+.element-contact {
+  text-align: center;
+  background: white;
+
+  li {
+    list-style: none;
+  }
+}
+.contact-form-center {
+  background: white;
+  padding: 0px 30px;
+
+}
+.button {
+
+      width: 63%;
+
+
+    border: 1px solid #1a50a5;
+}
+
+.button:hover {
+  background: none;
+background: #1a50a5;
+color: white;
+
+}
+textarea {
+  height: 50px;
+}
+
+.input-style {
+  border: 0.7px solid #444444;
+}

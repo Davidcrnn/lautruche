@@ -1,0 +1,27 @@
+
+.border {
+  height: 230px;
+  border: 10px solid white;
+  padding: 0;
+  h1 {
+    font-size: 22px;
+    color: black;
+    opacity: 1;
+  }
+}
+
+.content-container {
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  h1 {
+    margin: 0;
+        background-color: #ffffffb8;
+    padding: 10px 20Px;
+    border-radius: 3px;
+    font-size: 15px;
+  }
+}
+
+

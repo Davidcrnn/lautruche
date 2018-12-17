@@ -1,0 +1,50 @@
+ <div class="container container-margin">
+  <h1>AJOUTER UN OBJET</h1>
+<div class="row">
+  <div class="col-md-12">
+<%= simple_form_for(@textile, :html => { multipart: true }) do |f| %>
+ <% if @textile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@textile.errors.count, "erreur") %> empêchent l'objet d'être ajouté:</h2>
+
+      <ul>
+      <% @textile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container-form">
+    <div class="champs">
+      <%= f.input :titre, label: 'TITRE' %>
+      <%= f.input :description, label: 'DESCRIPTION' %>
+      <%= f.input :categorie, collection: ["Coussin", "Plaid", "Dessous de lit", "Nappe", "Rideau", "Tapis"], label: 'CATEGORIE', placeholder: "Choisissez une catégorie" %>
+      <%= f.input :prix, label: 'PRIX' %>
+      <%= f.input :visible, as: :select, label: 'VISIBLE' %>
+      <%= f.input :tephoto, label: "PHOTO PRINCIPALE", placeholder: 'Oui' %>
+      <%= f.input :tephoto_cache, as: :hidden %>
+    </div>
+
+
+   <%= f.fields_for :tepicture do |ff| %>
+    <div class="field">
+      <%= ff.label :tepicture %><br>
+      <%= ff.file_field :tepicture, multiple: true, name: "tepictures[]" %>
+    </div>
+  <% end %>
+
+    <div class="actions btn-margin">
+      <%= f.button :submit, 'AJOUTER', class: "btn-form" %>
+    </div>
+    <% end %>
+
+  </div>
+<p><%= link_to "RETOUR AUX ANNONCES", tables_path, class: 'btn-form-delete'  %></p>
+
+     </div>
+</div>
+</div>
+
+
+</div>

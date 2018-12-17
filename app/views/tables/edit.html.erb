@@ -1,0 +1,67 @@
+ <div class="container container-margin">
+  <h1>MODIFIER CET OBJET</h1>
+<div class="row">
+  <div class="col-md-12">
+<%= simple_form_for(@table, :html => { multipart: true }) do |f| %>
+ <% if @table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@table.errors.count, "erreur") %> empêchent l'objet d'être modifié:</h2>
+
+      <ul>
+      <% @table.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container-form">
+    <div class="champs">
+      <%= f.input :titre, label: 'TITRE' %>
+      <%= f.input :description, label: 'DESCRIPTION' %>
+      <%= f.input :categorie, collection: ["Assiette", "Couvert", "Tasse", "Plat"], label: 'CATEGORIE', placeholder: "Choisissez une catégorie" %>
+      <%= f.input :prix, label: 'PRIX' %>
+      <%= f.input :visible, as: :select, label: 'VISIBLE' %>
+      <%= f.input :tphoto, label: "PHOTO PRINCIPALE", placeholder: 'Oui' %>
+      <%= f.input :tphoto_cache, as: :hidden %>
+    </div>
+  <div class="photo-display">
+      <img src="<%= cl_image_path  @table.tphoto, height: 250, width: 400, crop: :fill%>" alt="">
+    </div>
+
+   <%= f.fields_for :tpicture do |ff| %>
+    <div class="field">
+      <%= ff.label :tpicture %><br>
+      <%= ff.file_field :tpicture, multiple: true, name: "tpictures[]" %>
+    </div>
+  <% end %>
+
+    <div class="actions btn-margin">
+      <%= f.button :submit, 'MODIFIER', class: "btn-form" %>
+    </div>
+    <% end %>
+
+
+    <% if @table.id %>
+    <div class="row">
+  <% @table.tpictures.each do |tpicture| %>
+      <div class="col-xs-12 col-md-3">
+    <%= image_tag tpicture.tpicture_url(:tables_thumbnail) %><br>
+    <%= link_to "Supprimez", tpicture_path(tpicture), :method => :delete, class: "btn-suppprimez" %><br>
+
+      </div>
+  <% end %>
+<% end %>
+    </div>
+  </div>
+
+    <%= link_to "SUPPRIMEZ CET OBJET", table_path(@table), :method => :delete, class: 'btn-form-delete'   %>
+<p><%= link_to "RETOUR À L'ANNONCE", table_path(@table), class: 'btn-form-delete'  %></p>
+
+     </div>
+</div>
+</div>
+
+
+</div>
+

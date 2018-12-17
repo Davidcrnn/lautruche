@@ -1,4 +1,4 @@
 class Lpicture < ApplicationRecord
-belongs_to :lyfestyle
+belongs_to :lifestyle
   mount_uploader :lpicture, LpictureUploader
 end

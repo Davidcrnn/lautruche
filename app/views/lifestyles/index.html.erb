@@ -1,0 +1,137 @@
+<div class="image-verrerie navigation admin-link">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVEL OBJET", new_lifestyle_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / LIFESTYLE </p>
+  <h1>LIFESTYLE</h1>
+  <div class="first-image lifestyle-img">
+
+  </div>
+  <div class="link-products cursor">
+    <ul>
+      <li id="1">TOUS LES ARTICLES</li>
+      <li id="2">MIROIRS</li>
+      <li id="3">BOUGIES</li>
+      <li id="4">BOUGEOIRES</li>
+      <li id="5">CADRES</li>
+    </ul>
+  </div>
+  <div id="div1"class="row">
+      <% @lifestyles.each do |lifestyle| %>
+      <% if lifestyle.visible === true %>
+
+
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path lifestyle.lphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= lifestyle.titre.upcase %></h2>
+      <p><%= lifestyle.prix %>€</p>
+      <%= link_to "Voir le produit", lifestyle_path(lifestyle), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div id="div2"class="row">
+      <% @lifestyles.each do |lifestyle| %>
+      <% if lifestyle.visible === true && lifestyle.categorie === "Miroir" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path lifestyle.lphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= lifestyle.titre.upcase %></h2>
+      <p><%= lifestyle.prix %>€</p>
+      <%= link_to "Voir le produit", lifestyle_path(lifestyle), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div id="div3"class="row">
+      <% @lifestyles.each do |lifestyle| %>
+       <% if lifestyle.visible === true && lifestyle.categorie === "Bougie" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path lifestyle.lphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= lifestyle.titre.upcase %></h2>
+      <p><%= lifestyle.prix %>€</p>
+      <%= link_to "Voir le produit", lifestyle_path(lifestyle), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+    <div id="div4"class="row">
+      <% @lifestyles.each do |lifestyle| %>
+       <% if lifestyle.visible === true && lifestyle.categorie === "Bougeoire" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path lifestyle.lphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= lifestyle.titre.upcase %></h2>
+      <p><%= lifestyle.prix %>€</p>
+      <%= link_to "Voir le produit", lifestyle_path(lifestyle), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  </div>
+    <div id="div5"class="row">
+      <% @lifestyles.each do |lifestyle| %>
+       <% if lifestyle.visible === true && lifestyle.categorie === "Cadre" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path lifestyle.lphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= lifestyle.titre.upcase %></h2>
+      <p><%= lifestyle.prix %>€</p>
+      <%= link_to "Voir le produit", lifestyle_path(lifestyle), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+</div>
+
+<!-- <script>
+    $(document).ready(function() {
+    $("#div2,#div3,#div4").css('display', 'none');
+
+  $("#1").on('click', function() {
+   $("#div1").fadeIn(1200,"swing");
+   $("#div2,#div3,#div4").fadeOut(1200,"swing");
+});
+$("#2").on('click', function() {
+   $("#div2").fadeIn(1200,"swing");
+   $("#div1,#div3,#div4").fadeOut(1200,"swing");
+});
+$("#3").on('click', function() {
+   $("#div3").fadeIn(1200,"swing");
+   $("#div1,#div2,#div4").fadeOut(1200,"swing");
+});
+$("#4").on('click', function() {
+   $("#div4").fadeIn(1200,"swing");
+   $("#div1,#div2,#div3").fadeOut(1200,"swing");
+});
+
+
+});
+</script> -->
