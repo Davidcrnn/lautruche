@@ -10,10 +10,85 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181217071451) do
+ActiveRecord::Schema.define(version: 20181217074617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boutiques", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lifestyles", force: :cascade do |t|
+    t.string "titre"
+    t.text "description"
+    t.integer "prix"
+    t.string "categorie"
+    t.string "lphoto"
+    t.boolean "visible", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lpictures", force: :cascade do |t|
+    t.string "lpicture"
+    t.integer "lifestyle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "picture"
+    t.integer "verrerie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tables", force: :cascade do |t|
+    t.string "titre"
+    t.text "description"
+    t.integer "prix"
+    t.string "categorie"
+    t.string "tphoto"
+    t.boolean "visible", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tepictures", force: :cascade do |t|
+    t.string "tepicture"
+    t.integer "textile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "textiles", force: :cascade do |t|
+    t.string "titre"
+    t.text "description"
+    t.integer "prix"
+    t.string "categorie"
+    t.string "tephoto"
+    t.boolean "visible", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tpictures", force: :cascade do |t|
+    t.string "tpicture"
+    t.integer "table_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,6 +100,17 @@ ActiveRecord::Schema.define(version: 20181217071451) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "verreries", force: :cascade do |t|
+    t.string "titre"
+    t.text "description"
+    t.integer "prix"
+    t.string "categorie"
+    t.string "photo"
+    t.boolean "visible", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
