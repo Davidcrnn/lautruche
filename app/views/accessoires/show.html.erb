@@ -1,0 +1,141 @@
+<div class="container-show">
+  <% if user_signed_in? %>
+  <div class="admin-link">
+    <p><%= link_to "NOUVEL OBJET", new_accessoire_path  %> / <%= link_to "MODIFIER L'OBJET", edit_accessoire_path(@accessoire)%> / <%= link_to "SUPPRIMER CET OBJET", accessoire_path(@accessoire), :method => :delete %> </p>
+  </div>
+  <% end %>
+  <div class="navigation">
+    <p><%= link_to "ACCUEIL", "/"  %> / <%= link_to "ACCESSOIRE", accessoires_path  %> / <%= @accessoire.titre.upcase %></p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 div col-sm-12 col-md-6">
+      <!-- Place somewhere in the <body> of your page -->
+<div id="tslider" class="flexslider">
+  <ul class="slides slides-container">
+    <li><img src="<%= cl_image_path  @accessoire.aphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
+    <li>
+      <% if @accessoire.apictures[0].present? %>
+
+      <img src="<%= cl_image_path @accessoire.apictures[0].apicture_url(:accessoires_image)%>">
+    </li>
+      <% end %>
+    <li>
+      <% if @accessoire.apictures[1].present? %>
+      <img src="<%= cl_image_path @accessoire.apictures[1].apicture_url(:accessoires_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @accessoire.apictures[2].present? %>
+      <img src="<%= cl_image_path @accessoire.apictures[2].apicture_url(:accessoires_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @accessoire.apictures[3].present? %>
+      <img src="<%= cl_image_path @accessoire.apictures[3].apicture_url(:accessoires_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @accessoire.apictures[4].present? %>
+      <img src="<%= cl_image_path @accessoire.apictures[3].apicture_url(:accessoires_image)%>" />
+    </li>
+     <% end %>
+    <!-- items mirrored twice, total of 12 -->
+  </ul>
+</div>
+<div id="tcarousel" class="flexslider">
+  <ul class="slides">
+    <li><img src="<%= cl_image_path  @accessoire.aphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
+    <li>
+      <% if @accessoire.apictures[0].present? %>
+      <img src="<%= cl_image_path @accessoire.apictures[0].apicture_url(:accessoires_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @accessoire.apictures[1].present? %>
+      <img src="<%= cl_image_path @accessoire.apictures[1].apicture_url(:accessoires_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @accessoire.apictures[2].present? %>
+      <img src="<%= cl_image_path @accessoire.apictures[2].apicture_url(:accessoires_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @accessoire.apictures[3].present? %>
+      <img src="<%= cl_image_path @accessoire.apictures[3].apicture_url(:accessoires_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @accessoire.apictures[4].present? %>
+      <img src="<%= cl_image_path @accessoire.apictures[3].apicture_url(:accessoires_image)%>" />
+    </li>
+     <% end %>
+    <!-- items mirrored twice, total of 12 -->
+  </ul>
+</div>
+
+    </div>
+    <div class="col-xs-12 div col-sm-12 col-md-4 show-description">
+        <h1><%= @accessoire.titre %></h1>
+        <h3><%= @accessoire.prix %>€</h3>
+        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assemble
+          <%= @accessoire.description %></p>
+        <div class="btn-dispo">
+          <%= link_to "Disponibilté", "/", class: "btn-dispo"  %>
+
+        </div>
+    </div>
+  </div>
+</div>
+<div class="nouveaute-container">
+  <div class="row">
+    <div class="col xs-12 center">
+      <hr class="fancy-line"><h1>AUTRES RECOMMANDATIONS</h1><hr class="fancy-line">
+    </div>
+  </div>
+    <div class="row center-card">
+      <% @accessoires[0..2].each do |objet| %>
+
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path objet.aphoto, height: 150, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= objet.titre.upcase %></h2>
+      <p><%= objet.prix %>€</p>
+
+      <%= link_to "Voir le produit", accessoire_path(objet), class: "link-cover"  %>
+
+
+    </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#tcarousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 100,
+    itemMargin: 5,
+    asNavFor: '#tslider',
+    directionNav:false,
+  });
+
+  $('#tslider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#tcarousel",
+    directionNav:false,
+  });
+  });
+</script>

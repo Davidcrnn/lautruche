@@ -1,0 +1,2 @@
+class EpicturesController < ApplicationController
+end

@@ -1,0 +1,113 @@
+<div class="image-verrerie navigation admin-link">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVEL OBJET", new_luminaire_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / LUMINAIRE </p>
+  <h1>LUMINAIRE</h1>
+  <div class="first-image luminaire-img">
+
+  </div>
+  <div class="link-products cursor">
+    <ul>
+      <li class="1">TOUS LES ARTICLES</li>
+      <li class="2">SUSPENSIONS</li>
+      <li class="3">LAMPES À POSER</li>
+      <li class="4">APPLIQUES</li>
+      <li class="5">BALADEUSES</li>
+
+    </ul>
+  </div>
+  <div class="div1 row">
+      <% @luminaires.each do |luminaire| %>
+      <% if luminaire.visible === true %>
+
+
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path luminaire.luphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= luminaire.titre.upcase %></h2>
+      <p><%= luminaire.prix %>€</p>
+      <%= link_to "Voir le produit", luminaire_path(luminaire), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div class="div2 row">
+      <% @luminaires.each do |luminaire| %>
+      <% if luminaire.visible === true && luminaire.categorie === "Suspension" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path luminaire.luphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= luminaire.titre.upcase %></h2>
+      <p><%= luminaire.prix %>€</p>
+      <%= link_to "Voir le produit", luminaire_path(luminaire), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div class="div3 row">
+      <% @luminaires.each do |luminaire| %>
+       <% if luminaire.visible === true && luminaire.categorie === "Lampe à poser" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path luminaire.luphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= luminaire.titre.upcase %></h2>
+      <p><%= luminaire.prix %>€</p>
+      <%= link_to "Voir le produit", luminaire_path(luminaire), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+    <div class="div4 row">
+      <% @luminaires.each do |luminaire| %>
+       <% if luminaire.visible === true && luminaire.categorie === "Applique" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path luminaire.luphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= luminaire.titre.upcase %></h2>
+      <p><%= luminaire.prix %>€</p>
+      <%= link_to "Voir le produit", luminaire_path(luminaire), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+    <div class="div5 row">
+      <% @luminaires.each do |luminaire| %>
+       <% if luminaire.visible === true && luminaire.categorie === "Baladeuse" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path luminaire.luphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= luminaire.titre.upcase %></h2>
+      <p><%= luminaire.prix %>€</p>
+      <%= link_to "Voir le produit", luminaire_path(luminaire), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+
+</div>

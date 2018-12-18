@@ -5,7 +5,7 @@
 
 }
 .header-form {
-  margin: 30px 100px;
+  margin: 70px 100px;
   text-align: center;
   h1 {
   font-size: 25px;
@@ -14,7 +14,7 @@
 }
 
 .footer-form {
-  margin: 0px 100px;
+  margin: 70px 100px;
   p {
     font-size: 12px;
   }
@@ -51,12 +51,12 @@
       width: 63%;
 
 
-    border: 1px solid #1a50a5;
+    border: 1px solid #444444;
 }
 
 .button:hover {
   background: none;
-background: #1a50a5;
+background: #444444;
 color: white;
 
 }
@@ -65,5 +65,5 @@ textarea {
 }
 
 .input-style {
-  border: 0.7px solid #444444;
+  border: 0.7px solid #4444444f;
 }
