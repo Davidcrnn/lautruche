@@ -1,0 +1,92 @@
+<div class="image-verrerie navigation admin-link">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVEL OBJET", new_enfant_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / ENFANT </p>
+  <h1>ENFANT</h1>
+  <div class="first-image enfants-img">
+
+  </div>
+  <div class="link-products cursor">
+    <ul>
+      <li class="1">TOUS LES ARTICLES</li>
+      <li class="2">DOUDOUNES</li>
+      <li class="3">TEXTILES</li>
+      <li class="3">DEGUISEMENTS</li>
+    </ul>
+  </div>
+  <div class="div1 row">
+      <% @enfants.each do |enfant| %>
+      <% if enfant.visible === true %>
+
+
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path enfant.ephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= enfant.titre.upcase %></h2>
+      <p><%= enfant.prix %>€</p>
+      <%= link_to "Voir le produit", enfant_path(enfant), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div class="div2 row">
+      <% @enfants.each do |enfant| %>
+      <% if enfant.visible === true && enfant.categorie === "Doudoune" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path enfant.ephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= enfant.titre.upcase %></h2>
+      <p><%= enfant.prix %>€</p>
+      <%= link_to "Voir le produit", enfant_path(enfant), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div id="div3"class="row">
+      <% @enfants.each do |enfant| %>
+       <% if enfant.visible === true && enfant.categorie === "Textile" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path enfant.ephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= enfant.titre.upcase %></h2>
+      <p><%= enfant.prix %>€</p>
+      <%= link_to "Voir le produit", enfant_path(enfant), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div class="div3 row">
+      <% @enfants.each do |enfant| %>
+       <% if enfant.visible === true && enfant.categorie === "Deguisement" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path enfant.ephoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= enfant.titre.upcase %></h2>
+      <p><%= enfant.prix %>€</p>
+      <%= link_to "Voir le produit", enfant_path(enfant), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+</div>

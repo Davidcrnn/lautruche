@@ -1,0 +1,112 @@
+<div class="image-verrerie navigation admin-link">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVEL OBJET", new_bijou_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / BIJOU </p>
+  <h1>BIJOU</h1>
+  <div class="first-image verrerie-img">
+
+  </div>
+  <div class="link-products cursor">
+    <ul>
+      <li class="1">TOUS LES ARTICLES</li>
+      <li class="2">BAGUES</li>
+      <li class="3">COLIERS</li>
+      <li class="3">BOUCLES D'OREILLE</li>
+      <li class="3">BRACELETS</li>
+    </ul>
+  </div>
+  <div class="div1 row">
+      <% @bijous.each do |bijou| %>
+      <% if bijou.visible === true %>
+
+
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path bijou.bphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= bijou.titre.upcase %></h2>
+      <p><%= bijou.prix %>€</p>
+      <%= link_to "Voir le produit", bijou_path(bijou), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div class="div2 row">
+      <% @bijous.each do |bijou| %>
+      <% if bijou.visible === true && bijou.categorie === "Bague" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path bijou.bphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= bijou.titre.upcase %></h2>
+      <p><%= bijou.prix %>€</p>
+      <%= link_to "Voir le produit", bijou_path(bijou), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div class="div3 row">
+      <% @bijous.each do |bijou| %>
+       <% if bijou.visible === true && bijou.categorie === "Colier" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path bijou.bphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= bijou.titre.upcase %></h2>
+      <p><%= bijou.prix %>€</p>
+      <%= link_to "Voir le produit", bijou_path(bijou), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+   <div class="div4 row">
+      <% @bijous.each do |bijou| %>
+       <% if bijou.visible === true && bijou.categorie === "Boucle d'oreille" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path bijou.bphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= bijou.titre.upcase %></h2>
+      <p><%= bijou.prix %>€</p>
+      <%= link_to "Voir le produit", bijou_path(bijou), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div class="div5 row">
+      <% @bijous.each do |bijou| %>
+       <% if bijou.visible === true && bijou.categorie === "Bracelet" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path bijou.bphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= bijou.titre.upcase %></h2>
+      <p><%= bijou.prix %>€</p>
+      <%= link_to "Voir le produit", bijou_path(bijou), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+
+</div>

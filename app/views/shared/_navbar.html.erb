@@ -22,11 +22,11 @@
                     <li><%= link_to "Textile", textiles_path, class: "cool-link"%></li>
                     <li><%= link_to "Lifestyle", lifestyles_path, class: "cool-link"%></li>
                     <li><%= link_to "Mobilier", mobiliers_path, class: "cool-link"%></li>
-                    <li><%= link_to "Luminaires", '/', class: "cool-link"%></li>
-                    <li><%= link_to "Enfants", '/', class: "cool-link"%></li>
-                    <li><%= link_to "Bijoux", '/', class: "cool-link"%></li>
-                    <li><%= link_to "Maroquinerie", '/', class: "cool-link"%></li>
-                    <li><%= link_to "Accessoires", '/', class: "cool-link"%></li>
+                    <li><%= link_to "Luminaires", luminaires_path, class: "cool-link"%></li>
+                    <li><%= link_to "Enfants", enfants_path, class: "cool-link"%></li>
+                    <li><%= link_to "Bijoux", bijous_path, class: "cool-link"%></li>
+                    <li><%= link_to "Maroquinerie", maroquineries_path, class: "cool-link"%></li>
+                    <li><%= link_to "Accessoires", accessoires_path, class: "cool-link"%></li>
                 </ul>
               </div>
 
@@ -52,77 +52,10 @@
             $(this).toggleClass('open');
         },
         function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $('.dropdown-menu', this).stop( true, true ).slideUp("slow");
             $(this).toggleClass('open');
         }
     );
 });
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="nav-bar-container id="myHeader">
-  <div class="logo-container">
-    <%= image_tag "logo-lettre.png" %>
-  </div>
-
-
-  <div class="link-primary">
-    <ul>
-      <li><%= link_to "Accueil", '/'%></li>
-      <li><%= link_to "Boutiques", boutiques_path%></li>
-      <li><%= link_to "Réalisations", ''%></li>
-      <li><%= link_to "Presse", '/'%></li>
-      <li><%= link_to "Contact", '/'%></li>
-    </ul>
-  </div>
-
-  <div class="link-products">
-    <ul>
-      <li><%= link_to "Verrerie", verreries_path, class: "cool-link"%></li>
-      <li><%= link_to "Table", '/', class: "cool-link"%></li>
-      <li><%= link_to "Textile", '/', class: "cool-link"%></li>
-      <li><%= link_to "Lifestyle", '/', class: "cool-link"%></li>
-      <li><%= link_to "Mobilier", '/', class: "cool-link"%></li>
-      <li><%= link_to "Luminaires", '/', class: "cool-link"%></li>
-      <li><%= link_to "Enfants", '/', class: "cool-link"%></li>
-      <li><%= link_to "Accessoires", '/', class: "cool-link"%></li>
-    </ul>
-  </div>
-  </div> -->
-<!--   <script>
-$(window).scroll(function() {
-
-    if ($(this).scrollTop()>100)
-     {
-        $('.logo-container').fadeOut();
-        $('.logo-container').addClass();
-     }
-    else
-     {
-      $('.logo-container').fadeIn();
-     }
- });
-
-  </script> -->

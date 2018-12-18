@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181217101935) do
+ActiveRecord::Schema.define(version: 20181217112854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accessoires", force: :cascade do |t|
+    t.string "titre"
+    t.text "description"
+    t.integer "prix"
+    t.string "categorie"
+    t.string "aphoto"
+    t.boolean "visible", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "apictures", force: :cascade do |t|
+    t.string "apicture"
+    t.integer "accessoire_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bijous", force: :cascade do |t|
+    t.string "titre"
+    t.text "description"
+    t.integer "prix"
+    t.string "categorie"
+    t.string "bphoto"
+    t.boolean "visible", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "boutiques", force: :cascade do |t|
     t.string "name"
@@ -24,7 +53,32 @@ ActiveRecord::Schema.define(version: 20181217101935) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "bpictures", force: :cascade do |t|
+    t.string "bpicture"
+    t.integer "bijou_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "enfants", force: :cascade do |t|
+    t.string "titre"
+    t.text "description"
+    t.integer "prix"
+    t.string "categorie"
+    t.string "ephoto"
+    t.boolean "visible", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "epictures", force: :cascade do |t|
+    t.string "epicture"
+    t.integer "enfant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,6 +97,42 @@ ActiveRecord::Schema.define(version: 20181217101935) do
   create_table "lpictures", force: :cascade do |t|
     t.string "lpicture"
     t.integer "lifestyle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "luminaires", force: :cascade do |t|
+    t.string "titre"
+    t.text "description"
+    t.integer "prix"
+    t.string "categorie"
+    t.string "luphoto"
+    t.boolean "visible", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lupictures", force: :cascade do |t|
+    t.string "lupicture"
+    t.integer "luminaire_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mapictures", force: :cascade do |t|
+    t.string "mapicture"
+    t.integer "maroquinerie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "maroquineries", force: :cascade do |t|
+    t.string "titre"
+    t.text "description"
+    t.integer "prix"
+    t.string "categorie"
+    t.string "maphoto"
+    t.boolean "visible", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

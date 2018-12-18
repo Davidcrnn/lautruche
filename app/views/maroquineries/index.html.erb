@@ -1,0 +1,93 @@
+<div class="image-verrerie navigation admin-link">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVEL OBJET", new_maroquinery_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / MAROQUINERIE </p>
+  <h1>MAROQUINERIE</h1>
+  <div class="first-image maroquinerie-img">
+
+  </div>
+  <div class="link-products cursor">
+    <ul>
+      <li class="1">TOUS LES ARTICLES</li>
+      <li class="2">SACS</li>
+      <li class="3">PORTE-MONNAIES</li>
+      <li class="4">POCHETTES</li>
+    </ul>
+  </div>
+  <div class="div1 row">
+      <% @maroquineries.each do |maroquinerie| %>
+      <% if maroquinerie.visible === true %>
+
+
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= maroquinerie.titre.upcase %></h2>
+      <p><%= maroquinerie.prix %>€</p>
+      <%= link_to "Voir le produit", maroquinery_path(maroquinerie), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+  <div class="div2 row">
+      <% @maroquineries.each do |maroquinerie| %>
+      <% if maroquinerie.visible === true && maroquinerie.categorie === "Sac" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= maroquinerie.titre.upcase %></h2>
+      <p><%= maroquinerie.prix %>€</p>
+      <%= link_to "Voir le produit", maroquinery_path(maroquinerie), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+  <div class="div3 row">
+      <% @maroquineries.each do |maroquinerie| %>
+       <% if maroquinerie.visible === true && maroquinerie.categorie === "Porte-monnaie" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= maroquinerie.titre.upcase %></h2>
+      <p><%= maroquinerie.prix %>€</p>
+      <%= link_to "Voir le produit", maroquinery_path(maroquinerie), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+    <div class="div4 row">
+      <% @maroquineries.each do |maroquinerie| %>
+       <% if maroquinerie.visible === true && maroquinerie.categorie === "Pochette" %>
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= maroquinerie.titre.upcase %></h2>
+      <p><%= maroquinerie.prix %>€</p>
+      <%= link_to "Voir le produit", maroquinery_path(maroquinerie), class: "link-cover"  %>
+    </div>
+      </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+
+</div>

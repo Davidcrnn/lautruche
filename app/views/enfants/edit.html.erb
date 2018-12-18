@@ -1,0 +1,67 @@
+ <div class="container container-margin">
+  <h1>MODIFIER CET OBJET</h1>
+<div class="row">
+  <div class="col-md-12">
+<%= simple_form_for(@enfant, :html => { multipart: true }) do |f| %>
+ <% if @enfant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@enfant.errors.count, "erreur") %> empêchent l'objet d'être modifié:</h2>
+
+      <ul>
+      <% @enfant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container-form">
+    <div class="champs">
+      <%= f.input :titre, label: 'TITRE' %>
+      <%= f.input :description, label: 'DESCRIPTION' %>
+      <%= f.input :categorie, collection: ["Doudoune", "Textile", "Deguisement"], label: 'CATEGORIE', placeholder: "Choisissez une catégorie" %>
+      <%= f.input :prix, label: 'PRIX' %>
+      <%= f.input :visible, as: :select, label: 'VISIBLE' %>
+      <%= f.input :ephoto, label: "PHOTO PRINCIPALE", placeholder: 'Oui' %>
+      <%= f.input :ephoto_cache, as: :hidden %>
+    </div>
+  <div class="photo-display">
+      <img src="<%= cl_image_path  @enfant.ephoto, height: 250, width: 400, crop: :fill%>" alt="">
+    </div>
+
+   <%= f.fields_for :epicture do |ff| %>
+    <div class="field">
+      <%= ff.label :epicture %><br>
+      <%= ff.file_field :epicture, multiple: true, name: "epictures[]" %>
+    </div>
+  <% end %>
+
+    <div class="actions btn-margin">
+      <%= f.button :submit, 'MODIFIER', class: "btn-form" %>
+    </div>
+    <% end %>
+
+
+    <% if @enfant.id %>
+    <div class="row">
+  <% @enfant.epictures.each do |epicture| %>
+      <div class="col-xs-12 col-md-3">
+    <%= image_tag epicture.epicture_url(:enfants_thumbnail) %><br>
+    <%= link_to "Supprimez", epicture_path(epicture), :method => :delete, class: "btn-suppprimez" %><br>
+
+      </div>
+  <% end %>
+<% end %>
+    </div>
+  </div>
+
+    <%= link_to "SUPPRIMEZ CET OBJET", accessoire_path(@enfant), :method => :delete, class: 'btn-form-delete'   %>
+<p><%= link_to "RETOUR À L'ANNONCE", accessoire_path(@enfant), class: 'btn-form-delete'  %></p>
+
+     </div>
+</div>
+</div>
+
+
+</div>
+

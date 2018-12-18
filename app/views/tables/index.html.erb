@@ -9,14 +9,14 @@
   </div>
   <div class="link-products cursor">
     <ul>
-      <li id="1">TOUS LES ARTICLES</li>
-      <li id="2">ASSIETTES</li>
-      <li id="3">COUVERTS</li>
-      <li id="4">TASSES</li>
-      <li id="5">PLATS</li>
+      <li class="1">TOUS LES ARTICLES</li>
+      <li class="2">ASSIETTES</li>
+      <li class="3">COUVERTS</li>
+      <li class="4">TASSES</li>
+      <li class="5">PLATS</li>
     </ul>
   </div>
-  <div id="div1"class="row">
+  <div class="div1 row">
       <% @tables.each do |table| %>
       <% if table.visible === true %>
 
@@ -36,7 +36,7 @@
       <% end %>
   <% end %>
   </div>
-  <div id="div2"class="row">
+  <div class="div2 row">
       <% @tables.each do |table| %>
       <% if table.visible === true && table.categorie === "Assiette" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -54,7 +54,7 @@
   <% end %>
   <% end %>
   </div>
-  <div id="div3"class="row">
+  <div class="div3 row">
       <% @tables.each do |table| %>
        <% if table.visible === true && table.categorie === "Couvert" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -72,7 +72,7 @@
   <% end %>
   <% end %>
   </div>
-    <div id="div4"class="row">
+    <div class="div4 row">
       <% @tables.each do |table| %>
        <% if table.visible === true && table.categorie === "Tasse" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -91,7 +91,7 @@
   <% end %>
   </div>
   </div>
-    <div id="div5"class="row">
+    <div class="div5 row">
       <% @tables.each do |table| %>
        <% if table.visible === true && table.categorie === "Plat" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">

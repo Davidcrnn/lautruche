@@ -1,0 +1,67 @@
+ <div class="container container-margin">
+  <h1>MODIFIER CET OBJET</h1>
+<div class="row">
+  <div class="col-md-12">
+<%= simple_form_for(@accessoire, :html => { multipart: true }) do |f| %>
+ <% if @accessoire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@accessoire.errors.count, "erreur") %> empêchent l'objet d'être modifié:</h2>
+
+      <ul>
+      <% @accessoire.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container-form">
+    <div class="champs">
+      <%= f.input :titre, label: 'TITRE' %>
+      <%= f.input :description, label: 'DESCRIPTION' %>
+      <%= f.input :categorie, collection: ["Etole", "Tablier"], label: 'CATEGORIE', placeholder: "Choisissez une catégorie" %>
+      <%= f.input :prix, label: 'PRIX' %>
+      <%= f.input :visible, as: :select, label: 'VISIBLE' %>
+      <%= f.input :aphoto, label: "PHOTO PRINCIPALE", placeholder: 'Oui' %>
+      <%= f.input :aphoto_cache, as: :hidden %>
+    </div>
+  <div class="photo-display">
+      <img src="<%= cl_image_path  @accessoire.aphoto, height: 250, width: 400, crop: :fill%>" alt="">
+    </div>
+
+   <%= f.fields_for :apicture do |ff| %>
+    <div class="field">
+      <%= ff.label :apicture %><br>
+      <%= ff.file_field :apicture, multiple: true, name: "apictures[]" %>
+    </div>
+  <% end %>
+
+    <div class="actions btn-margin">
+      <%= f.button :submit, 'MODIFIER', class: "btn-form" %>
+    </div>
+    <% end %>
+
+
+    <% if @accessoire.id %>
+    <div class="row">
+  <% @accessoire.apictures.each do |apicture| %>
+      <div class="col-xs-12 col-md-3">
+    <%= image_tag apicture.apicture_url(:accessoires_thumbnail) %><br>
+    <%= link_to "Supprimez", apicture_path(apicture), :method => :delete, class: "btn-suppprimez" %><br>
+
+      </div>
+  <% end %>
+<% end %>
+    </div>
+  </div>
+
+    <%= link_to "SUPPRIMEZ CET OBJET", accessoire_path(@accessoire), :method => :delete, class: 'btn-form-delete'   %>
+<p><%= link_to "RETOUR À L'ANNONCE", accessoire_path(@accessoire), class: 'btn-form-delete'  %></p>
+
+     </div>
+</div>
+</div>
+
+
+</div>
+

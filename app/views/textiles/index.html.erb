@@ -9,16 +9,16 @@
   </div>
   <div class="link-products cursor">
     <ul>
-      <li id="1te">TOUS LES ARTICLES</li>
-      <li id="2te">COUSSINS</li>
-      <li id="3te">PLAIDS</li>
-      <li id="4te">DESSOUS DE LIT</li>
-      <li id="5te">NAPPES</li>
-      <li id="6te">RIDEAUX</li>
-      <li id="7te">TAPIS</li>
+      <li class="1">TOUS LES ARTICLES</li>
+      <li class="2">COUSSINS</li>
+      <li class="3">PLAIDS</li>
+      <li class="4">DESSOUS DE LIT</li>
+      <li class="5">NAPPES</li>
+      <li class="6">RIDEAUX</li>
+      <li class="7">TAPIS</li>
     </ul>
   </div>
-  <div id="div1te"class="row">
+  <div class="div1 row">
       <% @textiles.each do |textile| %>
       <% if textile.visible === true %>
 
@@ -29,7 +29,7 @@
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
       <div class="titre-prix">
-      <h6><%= textile.titre.upcase %></h2>
+      <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
       <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
     </div>
@@ -38,7 +38,8 @@
       <% end %>
   <% end %>
   </div>
-  <div id="div2te"class="row">
+
+  <div class="div2 row">
       <% @textiles.each do |textile| %>
       <% if textile.visible === true && textile.categorie === "Coussin" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -47,7 +48,7 @@
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
       <div class="titre-prix">
-      <h6><%= textile.titre.upcase %></h2>
+      <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
       <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
     </div>
@@ -56,7 +57,7 @@
   <% end %>
   <% end %>
   </div>
-  <div id="div3te"class="row">
+  <div class="div3 row">
       <% @textiles.each do |textile| %>
        <% if textile.visible === true && textile.categorie === "Plaid" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -65,7 +66,7 @@
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
       <div class="titre-prix">
-      <h6><%= textile.titre.upcase %></h2>
+      <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
       <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
     </div>
@@ -74,7 +75,7 @@
   <% end %>
   <% end %>
   </div>
-    <div id="div4te"class="row">
+    <div class="div4 row">
       <% @textiles.each do |textile| %>
        <% if textile.visible === true && textile.categorie === "Dessous de lit" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -83,7 +84,7 @@
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
       <div class="titre-prix">
-      <h6><%= textile.titre.upcase %></h2>
+      <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
       <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
     </div>
@@ -93,7 +94,7 @@
   <% end %>
   </div>
 
-    <div id="div5te"class="row">
+    <div class="div5 row">
       <% @textiles.each do |textile| %>
        <% if textile.visible === true && textile.categorie === "Nappe" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -102,7 +103,7 @@
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
       <div class="titre-prix">
-      <h6><%= textile.titre.upcase %></h2>
+      <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
       <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
     </div>
@@ -111,7 +112,7 @@
       <% end %>
   <% end %>
   </div>
-  <div id="div6te"class="row">
+  <div class="div6 row">
       <% @textiles.each do |textile| %>
        <% if textile.visible === true && textile.categorie === "Rideau" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -120,7 +121,7 @@
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
       <div class="titre-prix">
-      <h6><%= textile.titre.upcase %></h2>
+      <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
       <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
     </div>
@@ -129,7 +130,7 @@
       <% end %>
   <% end %>
   </div>
-  <div id="div7te"class="row">
+  <div class="div7 row">
       <% @textiles.each do |textile| %>
        <% if textile.visible === true && textile.categorie === "Tapis" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -138,7 +139,7 @@
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
       <div class="titre-prix">
-      <h6><%= textile.titre.upcase %></h2>
+      <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
       <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
     </div>
@@ -149,7 +150,7 @@
   </div>
 </div>
 
-<script>
+<!-- <script>
     $(document).ready(function() {
     $("#div2te,#div3te,#div4te,#div5te,#div6te,#div7te").css('display', 'none');
 
@@ -185,4 +186,4 @@ $("#7te").on('click', function() {
 
 });
 
-</script>
+</script> -->

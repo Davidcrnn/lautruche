@@ -1,0 +1,2 @@
+class LupicturesController < ApplicationController
+end
