@@ -231,7 +231,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   letter_opener (~> 1.6)
   listen (~> 3.0.5)
-  mail_form
+  mail_form (~> 1.5, >= 1.5.1)
   pg (~> 0.21)
   pry-byebug
   pry-rails
@@ -250,4 +250,4 @@ RUBY VERSION
    ruby 2.4.3p205
 
 BUNDLED WITH
-   1.16.1
+   1.17.2

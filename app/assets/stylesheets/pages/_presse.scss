@@ -1,0 +1,48 @@
+.container-presse {
+  margin: 70px;
+}
+
+.header-presse {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom:30px;
+}
+
+.presse {
+  width: 100%;
+  background-color: #e6e6e669;
+  padding: 30px 50px;
+  margin-bottom: 50px;
+}
+
+.btn-lire {
+  border: 1px solid black;
+  width: 200px;
+  text-align: center;
+  padding: 20px 40px;
+  a {
+    color: black;
+   &:hover {
+    text-decoration: none;
+    opacity: 0.7;
+
+  }
+}
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}

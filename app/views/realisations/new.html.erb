@@ -1,0 +1,48 @@
+ <div class="container container-margin">
+  <h1>AJOUTER UN PROJET</h1>
+<div class="row">
+  <div class="col-xs-12">
+<%= simple_form_for(@realisation, :html => { multipart: true }) do |f| %>
+ <% if @realisation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@realisation.errors.count, "erreur") %> empêchent l'objet d'être ajouté:</h2>
+
+      <ul>
+      <% @realisation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container-form">
+    <div class="champs">
+      <%= f.input :titre, label: 'TITRE' %>
+      <%= f.input :description, label: 'DESCRIPTION' %>
+      <%= f.input :adresse, label: 'ADRESSE' %>
+      <%= f.input :rphoto, label: "PHOTO PRINCIPALE", placeholder: 'Oui' %>
+      <%= f.input :rphoto_cache, as: :hidden %>
+    </div>
+
+
+   <%= f.fields_for :rpicture do |ff| %>
+    <div class="field">
+      <%= ff.label :rpicture, label: "PHOTOS SECONDAIRES" %><br>
+      <%= ff.file_field :rpicture, multiple: true, name: "rpictures[]" %>
+    </div>
+  <% end %>
+
+    <div class="actions btn-margin">
+      <%= f.button :submit, 'AJOUTER', class: "btn-form" %>
+    </div>
+    <% end %>
+
+  </div>
+<p><%= link_to "RETOUR AUX ANNONCES", realisations_path, class: 'btn-form-delete'  %></p>
+
+     </div>
+</div>
+</div>
+
+
+</div>

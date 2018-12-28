@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/mentions-legales' => 'pages#mention'
+  get '/mentions' => 'pages#mention'
+  get '/presse' => 'pages#presse'
   devise_for :users
   root to: 'pages#home'
   devise_scope :user do
@@ -27,5 +28,7 @@ Rails.application.routes.draw do
   resources :mapictures, only: [:destroy]
   resources :bijous
   resources :bpictures, only: [:destroy]
+  resources :realisations
+  resources :rpictures, only: [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

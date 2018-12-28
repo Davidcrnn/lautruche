@@ -1,0 +1,23 @@
+.body-content {
+  margin: 70px;
+   li {
+    list-style-type: none;
+  } ul {
+    padding-left: 0;
+  }
+}
+
+.realisation-container a {
+  color: black;
+}
+
+.modal-footer a {
+  color:black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.body-content p {
+  font-size: 16px;
+}

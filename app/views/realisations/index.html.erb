@@ -1,0 +1,46 @@
+<div class="realisation-container image-verrerie">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVELLE RÉALISATION", new_realisation_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / RÉALISATIONS </p>
+  <h1>NOS RÉALISATIONS</h1>
+  <div class="row">
+    <% @realisations.each do |realisation| %>
+    <div class="col-xs-12">
+      <div class="projet" style="background-image: url('<%= cl_image_path realisation.rphoto, height: 300, crop: :fill %>'">
+        </div>
+    </div>
+    <% end %>
+<button type="button" class="link-cover" data-toggle="modal" data-target="#exampleModal">DISPONIBILITÉS</button>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span> -->
+                    </button>
+
+                  <div class="modal-body body-content">
+                    <h3>LES AUTRUCHES</h3>
+                    <p>Ce produit vous intéresse ? N'hesitez pas à nous contacter pour qu'on vous le réserve ou pour plus d'informations. A très vite.</p><br>
+                    <ul>
+                      <li><i class="far fa-compass"></i> 33 rue Boulard</li>
+                      <li><i class="far fa-compass"></i> Paris - 75014</li>
+                      <li><i class="far fa-address-book"></i> 01-40-20-90-00 / 06-07-03-61-62</li>
+                      <li><i class="far fa-envelope"></i> <a href="mailto:lesautruches@gmail.com" style="color: black;">lesautruches@gmail.com</a></li>
+                    </ul>
+
+
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="link-cover" data-dismiss="modal">Revenir à l'annonce</button>
+                    <button type="button" class="link-cover"> <%= link_to "Contactez nous par email", new_contact_path   %></button>
+                  </div>
+                </div>
+              </div>
+            </div>
