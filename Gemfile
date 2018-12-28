@@ -11,7 +11,7 @@ gem 'redis'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'geocoder'
-gem 'mail_form'
+gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

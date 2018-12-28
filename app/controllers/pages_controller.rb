@@ -5,4 +5,7 @@ class PagesController < ApplicationController
   end
   def mention
   end
+
+  def presse
+  end
 end

@@ -1,0 +1,65 @@
+ <div class="container container-margin">
+  <h1>MODIFIER CET OBJET</h1>
+<div class="row">
+  <div class="col-md-12">
+<%= simple_form_for(@realisation, :html => { multipart: true }) do |f| %>
+ <% if @realisation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@realisation.errors.count, "erreur") %> empêchent l'objet d'être modifié:</h2>
+
+      <ul>
+      <% @realisation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container-form">
+    <div class="champs">
+      <%= f.input :titre, label: 'TITRE' %>
+      <%= f.input :description, label: 'DESCRIPTION' %>
+      <%= f.input :adresse, label: 'ADRESSE' %>
+      <%= f.input :rphoto, label: "PHOTO PRINCIPALE", placeholder: 'Oui' %>
+      <%= f.input :rphoto_cache, as: :hidden %>
+    </div>
+  <div class="photo-display">
+      <img src="<%= cl_image_path  @realisation.rphoto, height: 250, width: 400, crop: :fill%>" alt="">
+    </div>
+
+   <%= f.fields_for :rpicture do |ff| %>
+    <div class="field">
+      <%= ff.label :rpicture %><br>
+      <%= ff.file_field :rpicture, multiple: true, name: "rpictures[]" %>
+    </div>
+  <% end %>
+
+    <div class="actions btn-margin">
+      <%= f.button :submit, 'MODIFIER', class: "btn-form" %>
+    </div>
+    <% end %>
+
+
+    <% if @realisation.id %>
+    <div class="row">
+  <% @realisation.rpictures.each do |rpicture| %>
+      <div class="col-xs-12 col-md-3">
+    <%= image_tag rpicture.rpicture_url(:realisations_thumbnail) %><br>
+    <%= link_to "Supprimez", rpicture_path(rpicture), :method => :delete, class: "btn-suppprimez" %><br>
+
+      </div>
+  <% end %>
+<% end %>
+    </div>
+  </div>
+
+    <%= link_to "SUPPRIMEZ CET OBJET", realisation_path(@realisation), :method => :delete, class: 'btn-form-delete'   %>
+<p><%= link_to "RETOUR À L'ANNONCE", realisation_path(@realisation), class: 'btn-form-delete'  %></p>
+
+     </div>
+</div>
+</div>
+
+
+</div>
+

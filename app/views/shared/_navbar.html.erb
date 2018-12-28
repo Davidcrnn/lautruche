@@ -1,12 +1,13 @@
 
   <div class="nav-bar-container">
    <div class="logo-container">
-    <%= image_tag "logo-lettre.png" %>
+    <a href="/" ><%= image_tag "logo-lettre.png" %></a>
+
   </div>
 
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="link-primary hidden-xs hidden-sm" id="bs-megadropdown-tabs">
+    <div class="link-primary" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav">
             <li><%= link_to "Accueil", '/'%></li>
         <li class="dropdown mega-dropdown active">
@@ -36,8 +37,8 @@
         </div>
       </li>
       <li><%= link_to "Boutiques", boutiques_path%></li>
-      <li><%= link_to "Réalisations", '/'%></li>
-      <li><%= link_to "Presse", '/'%></li>
+      <li><%= link_to "Réalisations", realisations_path%></li>
+      <li><%= link_to "Presse", presse_path%></li>
       <li><%= link_to "Contact", new_contact_path%></li>
         </ul>
     </div><!-- /.navbar-collapse -->
@@ -48,7 +49,7 @@
   $(document).ready(function(){
     $(".dropdown").hover(
         function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+            $('.dropdown-menu', this).stop( true, true ).slideDown("slow");
             $(this).toggleClass('open');
         },
         function() {

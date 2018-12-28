@@ -81,7 +81,7 @@
         <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assemble
           <%= @lifestyle.description %></p>
         <div class="btn-dispo">
-          <%= link_to "Disponibilté", "/", class: "btn-dispo"  %>
+          <button type="button" class="link-cover" data-toggle="modal" data-target="#exampleModal">DISPONIBILITÉS</button>
 
         </div>
     </div>
@@ -116,6 +116,35 @@
 
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span> -->
+                    </button>
+
+                  <div class="modal-body body-content">
+                    <h3>LES AUTRUCHES</h3>
+                    <p>Ce produit vous intéresse ? N'hesitez pas à nous contacter pour qu'on vous le réserve ou pour plus d'informations. A très vite.</p><br>
+                    <ul>
+                      <li><i class="far fa-compass"></i> 33 rue Boulard</li>
+                      <li><i class="far fa-compass"></i> Paris - 75014</li>
+                      <li><i class="far fa-address-book"></i> 01-40-20-90-00 / 06-07-03-61-62</li>
+                      <li><i class="far fa-envelope"></i> <a href="mailto:lesautruches@gmail.com" style="color: black;">lesautruches@gmail.com</a></li>
+                    </ul>
+
+
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="link-cover" data-dismiss="modal">Revenir à l'annonce</button>
+                    <button type="button" class="link-cover"> <%= link_to "Contactez nous par email", new_contact_path   %></button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
 <script type="text/javascript">

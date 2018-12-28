@@ -1,0 +1,114 @@
+<div class="container-show">
+  <% if user_signed_in? %>
+  <div class="admin-link">
+    <p><%= link_to "NOUVEL OBJET", new_realisation_path  %> / <%= link_to "MODIFIER L'OBJET", edit_realisation_path(@realisation)%> / <%= link_to "SUPPRIMER CET OBJET", realisation_path(@realisation), :method => :delete %> </p>
+  </div>
+  <% end %>
+  <div class="navigation">
+    <p><%= link_to "ACCUEIL", "/"  %> / <%= link_to "REALISATION", realisations_path  %> / <%= @realisation.titre.upcase %></p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 div col-sm-12 col-md-6">
+      <!-- Place somewhere in the <body> of your page -->
+<div id="teslider" class="flexslider">
+  <ul class="slides slides-container">
+    <li><img src="<%= cl_image_path  @realisation.rphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
+    <li>
+      <% if @realisation.rpictures[0] %>
+
+      <img src="<%= cl_image_path @realisation.rpictures[0].rpicture_url(:realisations_image)%>">
+    </li>
+      <% end %>
+    <li>
+      <% if @realisation.rpictures[1].present? %>
+      <img src="<%= cl_image_path @realisation.rpictures[1].rpicture_url(:realisations_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @realisation.rpictures[2].present? %>
+      <img src="<%= cl_image_path @realisation.rpictures[2].rpicture_url(:realisations_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @realisation.rpictures[3].present? %>
+      <img src="<%= cl_image_path @realisation.rpictures[3].rpicture_url(:realisations_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @realisation.rpictures[4].present? %>
+      <img src="<%= cl_image_path @realisation.rpictures[3].rpicture_url(:realisations_image)%>" />
+    </li>
+     <% end %>
+    <!-- items mirrored twice, total of 12 -->
+  </ul>
+</div>
+<div id="tecarousel" class="flexslider">
+  <ul class="slides">
+    <li><img src="<%= cl_image_path  @realisation.rphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
+    <li>
+      <% if @realisation.rpictures[0].present? %>
+      <img src="<%= cl_image_path @realisation.rpictures[0].rpicture_url(:realisations_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @realisation.rpictures[1].present? %>
+      <img src="<%= cl_image_path @realisation.rpictures[1].rpicture_url(:realisations_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @realisation.rpictures[2].present? %>
+      <img src="<%= cl_image_path @realisation.rpictures[2].rpicture_url(:realisations_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @realisation.rpictures[3].present? %>
+      <img src="<%= cl_image_path @realisation.rpictures[3].rpicture_url(:realisations_image)%>" />
+    </li>
+     <% end %>
+    <li>
+      <% if @realisation.rpictures[4].present? %>
+      <img src="<%= cl_image_path @realisation.rpictures[3].rpicture_url(:realisations_image)%>" />
+    </li>
+     <% end %>
+    <!-- items mirrored twice, total of 12 -->
+  </ul>
+</div>
+
+    </div>
+    <div class="col-xs-12 div col-sm-12 col-md-4 show-description">
+        <h1><%= @realisation.titre %></h1>
+        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assemble
+          <%= @realisation.description %></p>
+        <div class="btn-dispo">
+          <%= link_to "Intéressé", "/", class: "btn-dispo"  %>
+
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#tecarousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 100,
+    itemMargin: 5,
+    asNavFor: '#teslider',
+    directionNav:false,
+  });
+
+  $('#teslider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#tecarousel",
+    directionNav:false,
+  });
+  });
+</script>
+
