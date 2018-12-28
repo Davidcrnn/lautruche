@@ -231,7 +231,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   letter_opener (~> 1.6)
   listen (~> 3.0.5)
-  mail_form (~> 1.5, >= 1.5.1)
+  mail_form
   pg (~> 0.21)
   pry-byebug
   pry-rails
