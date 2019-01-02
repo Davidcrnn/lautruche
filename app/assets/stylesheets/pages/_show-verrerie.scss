@@ -41,3 +41,19 @@
   // padding-left: 3px;
 
 }
+
+@media screen and (max-width: 650px) {
+  .container-show {
+    margin: 30px 15px;
+  }
+  .admin-link p {
+    font-size: 12px;
+  }
+  .navigation p {
+    font-size: 14px
+  }
+  .nouveaute-container {
+    margin: 30px 15px;
+  }
+
+}

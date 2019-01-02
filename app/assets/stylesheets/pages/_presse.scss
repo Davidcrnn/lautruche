@@ -17,10 +17,10 @@
 }
 
 .btn-lire {
-  border: 1px solid black;
+  border: 2px solid #0000004f;
   width: 200px;
   text-align: center;
-  padding: 20px 40px;
+  padding: 10px 35px;
   a {
     color: black;
    &:hover {
@@ -45,4 +45,13 @@
     width:100%;
     background: #000;
     display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .container-presse {
+    margin: 30px 15px;
+  }
+  .header-presse h2 {
+    font-size: 16px;
+  }
 }

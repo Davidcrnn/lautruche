@@ -67,3 +67,22 @@ textarea {
 .input-style {
   border: 0.7px solid #4444444f;
 }
+
+@media screen and (max-width: 650px) {
+  .container-form-contact {
+    margin: 30px 15px;
+  }
+  .header-form {
+    margin: 30px 15px;
+  }
+  .contact-form-center {
+    padding: 0 0px 0 15px;
+  }
+  .button {
+    width: 91%;
+  }
+
+  .footer-form {
+    margin: 30px 15px;
+  }
+}
