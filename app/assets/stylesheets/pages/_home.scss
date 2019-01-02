@@ -22,14 +22,14 @@
 
 }
 .verrerie-img {
-  background-image: image-url('verrerie-min.jpg');
+  background-image: image-url('verrerie.jpg');
   background-size: cover;
   background-position: center;
   // opacity: 0.8;
 }
 .table-img {
     background-image: image-url('table-min.jpg');
-  background-size: cover;
+
   background-size: cover;
   background-position: center;
   // opacity: 0.8;
@@ -76,6 +76,18 @@
   background-position: center;
   // opacity: 0.8;
 }
+.maroquinerie-img {
+    background-image: image-url('maroquinerie.jpg');
+  background-size: cover;
+  background-position: center;
+  // opacity: 0.8;
+}
+
+.bijoux-img {
+  background-image: image-url('bijou-min.jpg');
+  background-size: cover;
+  background-position: center;
+}
 .perchoir-img {
 background-image: image-url('perchoir.jpg');
   background-size: cover;
@@ -117,6 +129,14 @@ hr.fancy-line:before, hr.fancy-line:after {
 hr.fancy-line, hr.fancy-line:before {
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
 }
-
+@media screen and (max-width: 650px) {
+  .produit-banner {
+    padding: 0;
+    margin: 50px 0;
+  }
+  .container-produits{
+    margin: 0;
+  }
+}
 @media screen and (min-width: 1281px) {
 }
