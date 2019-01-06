@@ -7,19 +7,30 @@
   <div class="first-image accessoires-img">
 
   </div>
-  <div class="link-products cursor">
-    <ul>
+  <div class="link-products cursor ">
+    <ul class="hidden-sm hidden-xs">
       <li class="1">TOUS LES ARTICLES</li>
       <li class="2">ÉTOLES</li>
       <li class="3">TABLIERS</li>
     </ul>
+<div class="btn-group link-products hidden-lg hidden-md">
+  <button type="button" class="btn-lire dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    TRIER PAR : <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li class="1">TOUS LES ARTICLES</li>
+    <li class="2">ÉTOLES</li>
+    <li class="3">TABLIERS</li>
+  </ul>
+</div>
   </div>
+ <!-- Single button -->
   <div class="div1 row">
       <% @accessoires.each do |accessoire| %>
       <% if accessoire.visible === true %>
 
 
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path accessoire.aphoto, height: 200, crop: :fill %>'">
@@ -36,8 +47,8 @@
   </div>
   <div class="div2 row">
       <% @accessoires.each do |accessoire| %>
-      <% if accessoire.visible === true && accessoire.categorie === "Assiette" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+      <% if accessoire.visible === true && accessoire.categorie === "Etole" %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path accessoire.aphoto, height: 200, crop: :fill %>'">
@@ -54,8 +65,8 @@
   </div>
   <div class="div3 row">
       <% @accessoires.each do |accessoire| %>
-       <% if accessoire.visible === true && accessoire.categorie === "Couvert" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+       <% if accessoire.visible === true && accessoire.categorie === "Tablier" %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path accessoire.aphoto, height: 200, crop: :fill %>'">

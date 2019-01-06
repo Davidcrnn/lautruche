@@ -1,3 +1,9 @@
 .container-mention {
   margin: 70px;
 }
+
+@media screen and (max-width: 650px) {
+  .container-mention {
+    margin: 30px 15px;
+  }
+}

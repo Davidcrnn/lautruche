@@ -7,11 +7,11 @@
   </div>
 
 
-    <div class="link-primary hidden-xse" id="bs-megadropdown-tabs">
-        <ul class="nav navbar-nav">
-            <li><%= link_to "Accueil", '/'%></li>
-        <li class="dropdown mega-dropdown active">
-          <a href="#" class="dropdown-toggle btn-footer" data-toggle="dropdown">Produits</a>
+    <div class="link-primary" id="bs-megadropdown-tabs">
+        <ul class="nav navbar-nav hidden-xs hidden-sm">
+            <li class="" ><%= link_to "Accueil", '/'%></li>
+        <li class="dropdown mega-dropdown active hidden-xs hidden-sm">
+          <a href="#" class="dropdown-toggle btn-footer" data-toggle="dropdown">Produits <span class="caret"></span></a>
         <div class="dropdown-menu mega-dropdown-menu">
           <div class="container-fluid">
 
@@ -36,16 +36,57 @@
 
         </div>
       </li>
-      <li><%= link_to "Boutiques", boutiques_path%></li>
-      <li><%= link_to "Réalisations", realisations_path%></li>
-      <li><%= link_to "Presse", presse_path%></li>
-      <li><%= link_to "Contact", new_contact_path%></li>
+      <li ><%= link_to "Boutiques", boutiques_path%></li>
+      <li ><%= link_to "Réalisations", realisations_path%></li>
+      <li ><%= link_to "Presse", presse_path%></li>
+      <li ><%= link_to "Contact", new_contact_path%></li>
+
         </ul>
+        <div class="home hidden-md  hidden-lg">
+          <a href="/"> <%= image_tag "home.svg" %></a>
+        </div>
+    <div class="hamburger hidden-md  hidden-lg">
+  <a><%= image_tag "hamburger.svg", class: "btn-open" %></a>
+</div>
     </div>
-
+<div class="overlay">
+  <div class="wrap">
+    <ul class="wrap-nav">
+      <li><a href="#">Qui sommes-nous ?</a>
+      <ul>
+        <li><a href="#">Nous</a></li>
+        <li><%= link_to "Boutiques", boutiques_path%></li>
+        <li><%= link_to "Réalisations", realisations_path%></li>
+        <li><%= link_to "Presse", presse_path%></li>
+      </ul>
+      </li>
+      <li><a href="#">Produits</a>
+      <ul>
+        <li><%= link_to "Verrerie", verreries_path%></li>
+        <li><%= link_to "Table", tables_path%></li>
+        <li><%= link_to "Textile", textiles_path%></li>
+        <li><%= link_to "Lifestyle", lifestyles_path%></li>
+        <li><%= link_to "Mobilier", mobiliers_path%></li>
+        <li><%= link_to "Luminaires", luminaires_path%></li>
+        <li><%= link_to "Enfants", enfants_path%></li>
+        <li><%= link_to "Bijoux", bijous_path%></li>
+        <li><%= link_to "Maroquinerie", maroquineries_path%></li>
+        <li><%= link_to "Accessoires", accessoires_path%></li>
+      </ul>
+      </li>
+      <li><a href="#">Contact</a>
+      <ul>
+        <li><%= link_to "Contact", new_contact_path%></li>
+        <li><a href="https://fr-fr.facebook.com/LesAutruches/"><%= image_tag 'facebook.svg' %></a>  </li>
+        <li><a href="https://www.instagram.com/lesautruches/"><%= image_tag 'instagram (1).svg'%> </a></li>
+      </ul>
+      </li>
+    </ul>
+  </div>
+</div>
   </div>
 
-  </div>
+
 <script>
   $(document).ready(function(){
     $(".dropdown").hover(
@@ -58,6 +99,20 @@
             $(this).toggleClass('open');
         }
     );
+});
+</script>
+
+<script>
+  $(document).ready(function(){
+    $(".hamburger a").click(function(){
+        $(".overlay").fadeToggle(200);
+       $(this).toggleClass('btn-open').toggleClass('btn-close');
+    });
+});
+$('.overlay').on('click', function(){
+    $(".overlay").fadeToggle(200);
+    $(".hamburger a").toggleClass('btn-open').toggleClass('btn-close');
+    open = false;
 });
 </script>
 

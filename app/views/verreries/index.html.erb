@@ -20,7 +20,7 @@
       <% if verre.visible === true %>
 
 
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
@@ -28,7 +28,8 @@
       <div class="titre-prix">
       <h6><%= verre.titre.upcase %></h2>
       <p><%= verre.prix %>€</p>
-      <%= link_to "Voir le produit", verrery_path(verre), class: "link-cover"  %>
+    <%= link_to "Voir le produit", verrery_path(verre), class: "link-cover"  %>
+
     </div>
       </div>
       </div>
@@ -38,7 +39,7 @@
   <div class="div2 row">
       <% @verreries.each do |verre| %>
       <% if verre.visible === true && verre.categorie === "Verre" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
@@ -56,7 +57,7 @@
   <div class="div3 row">
       <% @verreries.each do |verre| %>
        <% if verre.visible === true && verre.categorie === "Carafe" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
@@ -74,7 +75,7 @@
     <div class="div4 row">
       <% @verreries.each do |verre| %>
        <% if verre.visible === true && verre.categorie === "Vase" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">

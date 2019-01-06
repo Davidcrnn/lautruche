@@ -20,7 +20,7 @@
       <% if maroquinerie.visible === true %>
 
 
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
@@ -38,7 +38,7 @@
   <div class="div2 row">
       <% @maroquineries.each do |maroquinerie| %>
       <% if maroquinerie.visible === true && maroquinerie.categorie === "Sac" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
@@ -56,7 +56,7 @@
   <div class="div3 row">
       <% @maroquineries.each do |maroquinerie| %>
        <% if maroquinerie.visible === true && maroquinerie.categorie === "Porte-monnaie" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
@@ -74,7 +74,7 @@
     <div class="div4 row">
       <% @maroquineries.each do |maroquinerie| %>
        <% if maroquinerie.visible === true && maroquinerie.categorie === "Pochette" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">

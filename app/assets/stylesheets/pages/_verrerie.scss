@@ -72,7 +72,12 @@
     text-decoration: none;
     opacity: 0.6;
     color: black;
+
   }
+}
+
+ul.dropdown-menu {
+  margin: 0;
 }
 
 @media only screen and (max-width: 400px) {
@@ -83,7 +88,7 @@
   .carte {
     border: 0;
     padding: 0;
-    height: 100px;
+    height: 300px;
   }
   .nouveaute-container {
     margin: 0;

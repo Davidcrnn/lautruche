@@ -31,7 +31,7 @@
 
    <%= f.fields_for :tpicture do |ff| %>
     <div class="field">
-      <%= ff.label :tpicture %><br>
+      <%= ff.label :tpicture, label: "PHOTOS SECONDAIRES" %><br>
       <%= ff.file_field :tpicture, multiple: true, name: "tpictures[]" %>
     </div>
   <% end %>

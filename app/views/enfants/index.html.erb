@@ -20,7 +20,7 @@
       <% if enfant.visible === true %>
 
 
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path enfant.ephoto, height: 200, crop: :fill %>'">
@@ -38,7 +38,7 @@
   <div class="div2 row">
       <% @enfants.each do |enfant| %>
       <% if enfant.visible === true && enfant.categorie === "Doudoune" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path enfant.ephoto, height: 200, crop: :fill %>'">
@@ -56,7 +56,7 @@
   <div id="div3"class="row">
       <% @enfants.each do |enfant| %>
        <% if enfant.visible === true && enfant.categorie === "Textile" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path enfant.ephoto, height: 200, crop: :fill %>'">
@@ -74,7 +74,7 @@
   <div class="div3 row">
       <% @enfants.each do |enfant| %>
        <% if enfant.visible === true && enfant.categorie === "Deguisement" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path enfant.ephoto, height: 200, crop: :fill %>'">
