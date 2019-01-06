@@ -21,7 +21,7 @@
       <% if table.visible === true %>
 
 
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
@@ -39,7 +39,7 @@
   <div class="div2 row">
       <% @tables.each do |table| %>
       <% if table.visible === true && table.categorie === "Assiette" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
@@ -57,7 +57,7 @@
   <div class="div3 row">
       <% @tables.each do |table| %>
        <% if table.visible === true && table.categorie === "Couvert" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
@@ -75,7 +75,7 @@
     <div class="div4 row">
       <% @tables.each do |table| %>
        <% if table.visible === true && table.categorie === "Tasse" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
@@ -94,7 +94,7 @@
     <div class="div5 row">
       <% @tables.each do |table| %>
        <% if table.visible === true && table.categorie === "Plat" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">

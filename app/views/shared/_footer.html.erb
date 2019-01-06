@@ -2,31 +2,7 @@
   <div class="row">
 
 
-    <div class="col-xs-12 col-sm-6 col-md-3 container-navigation">
-      <h3>SUIVEZ NOUS!</h3>
-      <div class="icon-container">
-        <p><a href="https://fr-fr.facebook.com/LesAutruches/"><%= image_tag 'facebook.svg' %></a>  <a href="https://www.instagram.com/lesautruches/"><%= image_tag 'instagram (1).svg'%> </a>  </p>
-
-
-      </div>
-    </div>
-    <div class=" col-xs-12 col-sm-6 col-md-3 container-navigation">
-      <h3>NAVIGATION</h3>
-      <ul>
-        <li><%= link_to 'Accueil', '/'  %></li>
-        <li><%= link_to "Boutiques", boutiques_path %></li>
-        <li><%= link_to "Réalisations", realisations_path %></li>
-        <li><%= link_to "Contact", new_contact_path  %></li>
-        <li><%= link_to "Mentions légales", mentions_path  %></li>
-        <% if user_signed_in? %>
-        <li><%= link_to "Déconnexion", destroy_user_session_path  %></li>
-        <% else %>
-        <li><%= link_to "Admin", new_user_session_path  %></li>
-
-        <% end %>
-      </ul>
-    </div>
-     <div class="col-xs-12 col-sm-6 col-md-3 container-navigation">
+<div class="col-xs-12 col-sm-6 col-md-3 container-navigation hidden-xs hidden-sm">
       <h3>PRODUITS</h3>
        <ul>
       <li><%= link_to "Verrerie", verreries_path %></li>
@@ -41,6 +17,24 @@
       <li><%= link_to "Accessoires", accessoires_path%></li>
     </ul>
     </div>
+    <div class=" col-xs-12 col-sm-6 col-md-3 container-navigation hidden-xs hidden-sm">
+      <h3>NAVIGATION</h3>
+      <ul>
+        <li><%= link_to 'Accueil', '/'  %></li>
+        <li><%= link_to "Boutiques", boutiques_path %></li>
+        <li><%= link_to "Réalisations", realisations_path %></li>
+        <li><%= link_to "Contact", new_contact_path  %></li>
+        <li><%= link_to "Mentions légales", mentions_path  %></li>
+        <li><%= link_to "Presse", presse_path  %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to "Déconnexion", destroy_user_session_path  %></li>
+        <% else %>
+        <li><%= link_to "Admin", new_user_session_path  %></li>
+
+        <% end %>
+      </ul>
+    </div>
+
 
     <div class=" col-xs-12 col-sm-6 col-md-3 container-navigation">
       <h3>CONTACT</h3>
@@ -51,6 +45,15 @@
         <li>01 43 20 23 62</li>
         <li><a href="mailto:Lesautruches@gmail.com">Lesautruches@gmail.com</a></li>
       </ul>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-3 container-navigation">
+      <h3>SUIVEZ NOUS!</h3>
+      <div class="icon-container">
+        <p><a href="https://fr-fr.facebook.com/LesAutruches/"><%= image_tag 'facebook.svg' %></a>  <a href="https://www.instagram.com/lesautruches/"><%= image_tag 'instagram (1).svg'%> </a>  </p>
+
+
+      </div>
     </div>
 </div>
 </div>

@@ -23,7 +23,7 @@
       <% if textile.visible === true %>
 
 
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
@@ -42,7 +42,7 @@
   <div class="div2 row">
       <% @textiles.each do |textile| %>
       <% if textile.visible === true && textile.categorie === "Coussin" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
@@ -60,7 +60,7 @@
   <div class="div3 row">
       <% @textiles.each do |textile| %>
        <% if textile.visible === true && textile.categorie === "Plaid" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
@@ -78,7 +78,7 @@
     <div class="div4 row">
       <% @textiles.each do |textile| %>
        <% if textile.visible === true && textile.categorie === "Dessous de lit" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
@@ -97,7 +97,7 @@
     <div class="div5 row">
       <% @textiles.each do |textile| %>
        <% if textile.visible === true && textile.categorie === "Nappe" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
@@ -115,7 +115,7 @@
   <div class="div6 row">
       <% @textiles.each do |textile| %>
        <% if textile.visible === true && textile.categorie === "Rideau" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
@@ -133,7 +133,7 @@
   <div class="div7 row">
       <% @textiles.each do |textile| %>
        <% if textile.visible === true && textile.categorie === "Tapis" %>
-    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">

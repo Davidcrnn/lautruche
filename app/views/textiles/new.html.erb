@@ -29,7 +29,7 @@
 
    <%= f.fields_for :tepicture do |ff| %>
     <div class="field">
-      <%= ff.label :tepicture %><br>
+      <%= ff.label :tepicture, label: "PHOTOS SECONDAIRES" %><br>
       <%= ff.file_field :tepicture, multiple: true, name: "tepictures[]" %>
     </div>
   <% end %>
