@@ -1,11 +1,10 @@
 // Google Map
 #mapCanvas {
-  flex: 0 0 500px;
+  flex: 0 0 400px;
   height: auto;
   position: sticky !important;
   top: 0 !important;
-  margin-top: 20px;
-}
+  }
 
 .container-boutique {
   margin: 70px;
@@ -30,19 +29,20 @@
 }
 
 .container-text-autruches h3 {
-
+  margin-top: 0;
   font-size: 20px;
 }
 
 .photo-autruches {
   height: 200px;
-  width: 73%;
+
 
 }
 .titre {
   margin:70px;
   text-align: center;
   font-size: 25px;
+  color: $second;
 }
 
 // Media Queries

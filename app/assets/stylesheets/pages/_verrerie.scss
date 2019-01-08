@@ -12,7 +12,9 @@
   margin-bottom: 20px;
   a {
     color:black;
-
+    font-size: 13px;
+  } p {
+    font-size:13px;
   }
 }
 .cursor {
@@ -56,14 +58,20 @@
     text-align: center;
     margin-bottom: 50px;
     font-size: 25px;
+    color: $second;
   }
 }
 
 .titre-prix {
   text-align: center;
   padding: 20px 0 50px 0;
+  p {
+    color: $second;
+  }
 }
-
+.titre-prix img {
+  height: 45px;
+}
 .link-cover  {
   color: black;
   border: 2px solid black;
@@ -80,9 +88,20 @@ ul.dropdown-menu {
   margin: 0;
 }
 
-@media only screen and (max-width: 400px) {
+.zoom img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.zoom img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 650px) {
   .image-verrerie {
-    margin: 0 5px;
+    margin: 30px 15px;
   }
 
   .carte {

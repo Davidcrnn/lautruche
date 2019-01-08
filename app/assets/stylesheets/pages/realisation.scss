@@ -1,18 +1,37 @@
 .body-content {
   margin: 70px;
+
    li {
     list-style-type: none;
   } ul {
     padding-left: 0;
+  } h3 {
+    color: $second;
   }
 }
-
+.specific-icon button img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 30px;
+  }
 .realisation-container a {
   color: black;
+  font-size: 13px;
+
 }
+
+.realisation-container p {
+
+    font-size: 13px;
+  }
+
 
 .modal-footer a {
   color:black;
+  display: flex;
+  align-items: center;
+
   &:hover {
     text-decoration: none;
   }
@@ -20,4 +39,16 @@
 
 .body-content p {
   font-size: 16px;
+}
+
+.footer-mod {
+  text-align: center;
+}
+
+.projet {
+  height: 250px;
+  width: auto;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 20px solid white;
 }

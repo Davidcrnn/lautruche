@@ -18,9 +18,21 @@
   h1 {
     font-size: 25px;
     margin: 20px;
+    color: $second;
   }
 
 }
+.content-container img {
+  background-size: cover;
+  background-position: center;
+
+}
+
+.content-container  h3 {
+    color: black;
+    margin-left: 20px;
+    font-size: 20px;
+  }
 .verrerie-img {
   background-image: image-url('verrerie.jpg');
   background-size: cover;
@@ -88,23 +100,7 @@
   background-size: cover;
   background-position: center;
 }
-.perchoir-img {
-background-image: image-url('perchoir.jpg');
-  background-size: cover;
-  background-position: center;
-}
 
-.perchoir1-img {
-background-image: image-url('perchoir1.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.perchoir2-img {
-  background-image: image-url('perchoir2.jpg');
-  background-size: cover;
-  background-position: center;
-}
 hr.fancy-line {
     border: 0;
     height: 4px;
@@ -136,6 +132,9 @@ hr.fancy-line, hr.fancy-line:before {
   }
   .container-produits{
     margin: 0;
+  }
+  .rslides li {
+    height: 300px;
   }
 }
 @media screen and (min-width: 1281px) {

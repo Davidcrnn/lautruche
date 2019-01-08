@@ -4,16 +4,29 @@
   <% end %>
   <p><%= link_to "ACCUEIL", '/'  %> / MAROQUINERIE </p>
   <h1>MAROQUINERIE</h1>
+  <hr class="fancy-line"></hr>
   <div class="first-image maroquinerie-img">
 
   </div>
   <div class="link-products cursor">
-    <ul>
+    <ul class="hidden-xs hidden-sm">
       <li class="1">TOUS LES ARTICLES</li>
       <li class="2">SACS</li>
       <li class="3">PORTE-MONNAIES</li>
       <li class="4">POCHETTES</li>
     </ul>
+        <div class="btn-group link-products hidden-lg hidden-md">
+  <button type="button" class="btn-lire dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    TRIER PAR : <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu modal-drop">
+    <li class="1">Tous les articles</li>
+    <li class="2">Sacs</li>
+    <li class="3">Porte-monnaies</li>
+      <li class="4">Pochettes</li>
+
+  </ul>
+</div>
   </div>
   <div class="div1 row">
       <% @maroquineries.each do |maroquinerie| %>
@@ -25,10 +38,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= maroquinerie.titre.upcase %></h2>
       <p><%= maroquinerie.prix %>€</p>
-      <%= link_to "Voir le produit", maroquinery_path(maroquinerie), class: "link-cover"  %>
+      <%= link_to maroquinerie_path(maroquinerie) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -43,10 +58,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= maroquinerie.titre.upcase %></h2>
       <p><%= maroquinerie.prix %>€</p>
-      <%= link_to "Voir le produit", maroquinery_path(maroquinerie), class: "link-cover"  %>
+      <%= link_to maroquinerie_path(maroquinerie) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -61,10 +78,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= maroquinerie.titre.upcase %></h2>
       <p><%= maroquinerie.prix %>€</p>
-      <%= link_to "Voir le produit", maroquinery_path(maroquinerie), class: "link-cover"  %>
+      <%= link_to maroquinerie_path(maroquinerie) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -79,10 +98,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path maroquinerie.maphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= maroquinerie.titre.upcase %></h2>
       <p><%= maroquinerie.prix %>€</p>
-      <%= link_to "Voir le produit", maroquinery_path(maroquinerie), class: "link-cover"  %>
+      <%= link_to maroquinerie_path(maroquinerie) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>

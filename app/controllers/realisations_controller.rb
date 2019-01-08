@@ -59,7 +59,7 @@ class RealisationsController < ApplicationController
   def destroy
 
     @realisation.destroy
-    redirect_to Realisations_path
+    redirect_to realisations_path
   end
 
   private

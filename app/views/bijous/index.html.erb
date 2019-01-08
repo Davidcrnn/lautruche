@@ -4,17 +4,30 @@
   <% end %>
   <p><%= link_to "ACCUEIL", '/'  %> / BIJOU </p>
   <h1>BIJOU</h1>
+  <hr class="fancy-line"></hr>
   <div class="first-image bijoux-img">
 
   </div>
   <div class="link-products cursor">
-    <ul>
+    <ul class="hidden-sm hidden-sm">
       <li class="1">TOUS LES ARTICLES</li>
       <li class="2">BAGUES</li>
       <li class="3">COLIERS</li>
       <li class="3">BOUCLES D'OREILLE</li>
       <li class="3">BRACELETS</li>
     </ul>
+        <div class="btn-group link-products hidden-lg hidden-md">
+  <button type="button" class="btn-lire dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    TRIER PAR : <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu modal-drop">
+    <li class="1">Tous les articles</li>
+    <li class="2">Bagues</li>
+    <li class="3">Coliers</li>
+      <li class="4">Boucles d'oreille</li>
+      <li class="5">Bracelets</li>
+  </ul>
+</div>
   </div>
   <div class="div1 row">
       <% @bijous.each do |bijou| %>
@@ -26,10 +39,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path bijou.bphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= bijou.titre.upcase %></h2>
       <p><%= bijou.prix %>€</p>
-      <%= link_to "Voir le produit", bijou_path(bijou), class: "link-cover"  %>
+      <%= link_to bijou_path(bijou) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -44,10 +59,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path bijou.bphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= bijou.titre.upcase %></h2>
       <p><%= bijou.prix %>€</p>
-      <%= link_to "Voir le produit", bijou_path(bijou), class: "link-cover"  %>
+      <%= link_to bijou_path(bijou) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -62,10 +79,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path bijou.bphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= bijou.titre.upcase %></h2>
       <p><%= bijou.prix %>€</p>
-      <%= link_to "Voir le produit", bijou_path(bijou), class: "link-cover"  %>
+      <%= link_to bijou_path(bijou) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -80,10 +99,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path bijou.bphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= bijou.titre.upcase %></h2>
       <p><%= bijou.prix %>€</p>
-      <%= link_to "Voir le produit", bijou_path(bijou), class: "link-cover"  %>
+      <%= link_to bijou_path(bijou) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -98,10 +119,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path bijou.bphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= bijou.titre.upcase %></h2>
       <p><%= bijou.prix %>€</p>
-      <%= link_to "Voir le produit", bijou_path(bijou), class: "link-cover"  %>
+      <%= link_to bijou_path(bijou) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>

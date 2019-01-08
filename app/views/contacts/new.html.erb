@@ -8,7 +8,7 @@
   <div class="row">
   <%= simple_form_for @contact do |f| %>
   <div class="row col-xs-12">
-    <%= f.input :nom, label: 'NOM', :required => true, :input_html => {:class => 'input-style'} %>
+    <%= f.input :name, label: 'NOM', :required => true, :input_html => {:class => 'input-style'} %>
 
   </div>
   <div class="row col-xs-12">
@@ -27,7 +27,7 @@
     <div class="hidden">
     <%= f.input :nickname %>
     </div>
-      <%= f.button :submit, 'ENVOYÉ' %>
+      <%= f.button :submit, 'ENVOYÉ', class: 'submit-btn' %>
       <br><br>
 
     </div>

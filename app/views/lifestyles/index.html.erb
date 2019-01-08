@@ -4,17 +4,30 @@
   <% end %>
   <p><%= link_to "ACCUEIL", '/'  %> / LIFESTYLE </p>
   <h1>LIFESTYLE</h1>
+  <hr class="fancy-line"></hr>
   <div class="first-image lifestyle-img">
 
   </div>
   <div class="link-products cursor">
-    <ul>
+    <ul class="hidden-sm hidden-xs">
       <li class="1">TOUS LES ARTICLES</li>
       <li class="2">MIROIRS</li>
       <li class="3">BOUGIES</li>
       <li class="4">BOUGEOIRES</li>
       <li class="5">CADRES</li>
     </ul>
+        <div class="btn-group link-products hidden-lg hidden-md">
+  <button type="button" class="btn-lire dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    TRIER PAR : <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu modal-drop">
+    <li class="1">Tous les articles</li>
+    <li class="2">Miroirs</li>
+    <li class="3">Bougies</li>
+      <li class="4">Bougeoires</li>
+      <li class="5">Cadres</li>
+  </ul>
+</div>
   </div>
   <div class="div1 row">
       <% @lifestyles.each do |lifestyle| %>
@@ -26,10 +39,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path lifestyle.lphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= lifestyle.titre.upcase %></h2>
       <p><%= lifestyle.prix %>€</p>
-      <%= link_to "Voir le produit", lifestyle_path(lifestyle), class: "link-cover"  %>
+      <%= link_to lifestyle_path(lifestyle) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -44,10 +59,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path lifestyle.lphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= lifestyle.titre.upcase %></h2>
       <p><%= lifestyle.prix %>€</p>
-      <%= link_to "Voir le produit", lifestyle_path(lifestyle), class: "link-cover"  %>
+      <%= link_to lifestyle_path(lifestyle) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -62,10 +79,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path lifestyle.lphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= lifestyle.titre.upcase %></h2>
       <p><%= lifestyle.prix %>€</p>
-      <%= link_to "Voir le produit", lifestyle_path(lifestyle), class: "link-cover"  %>
+      <%= link_to lifestyle_path(lifestyle) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -80,10 +99,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path lifestyle.lphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= lifestyle.titre.upcase %></h2>
       <p><%= lifestyle.prix %>€</p>
-      <%= link_to "Voir le produit", lifestyle_path(lifestyle), class: "link-cover"  %>
+      <%= link_to lifestyle_path(lifestyle) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -99,10 +120,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path lifestyle.lphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= lifestyle.titre.upcase %></h2>
       <p><%= lifestyle.prix %>€</p>
-      <%= link_to "Voir le produit", lifestyle_path(lifestyle), class: "link-cover"  %>
+      <%= link_to lifestyle_path(lifestyle) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
