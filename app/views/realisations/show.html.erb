@@ -1,7 +1,7 @@
 <div class="container-show">
   <% if user_signed_in? %>
   <div class="admin-link">
-    <p><%= link_to "NOUVEL OBJET", new_realisation_path  %> / <%= link_to "MODIFIER L'OBJET", edit_realisation_path(@realisation)%> / <%= link_to "SUPPRIMER CET OBJET", realisation_path(@realisation), :method => :delete %> </p>
+    <p><%= link_to "NOUVEAU PROJET", new_realisation_path  %> / <%= link_to "MODIFIER LE PROJET", edit_realisation_path(@realisation)%> / <%= link_to "SUPPRIMER CE PROJET", realisation_path(@realisation), :method => :delete %> </p>
   </div>
   <% end %>
   <div class="navigation">
@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-xs-12 div col-sm-12 col-md-6">
       <!-- Place somewhere in the <body> of your page -->
-<div id="teslider" class="flexslider">
+<div id="tslider" class="flexslider">
   <ul class="slides slides-container">
     <li><img src="<%= cl_image_path  @realisation.rphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
     <li>
@@ -42,7 +42,7 @@
     <!-- items mirrored twice, total of 12 -->
   </ul>
 </div>
-<div id="tecarousel" class="flexslider">
+<div id="tcarousel" class="flexslider">
   <ul class="slides">
     <li><img src="<%= cl_image_path  @realisation.rphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
     <li>
@@ -76,9 +76,8 @@
 
     </div>
     <div class="col-xs-12 div col-sm-12 col-md-4 show-description">
-        <h1><%= @realisation.titre %></h1>
-        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assemble
-          <%= @realisation.description %></p>
+        <h1><%= @realisation.titre.capitalize %></h1>
+        <p><%= @realisation.description %></p>
         <div class="btn-dispo">
           <%= link_to "Intéressé", "/", class: "btn-dispo"  %>
 
@@ -89,3 +88,26 @@
 </div>
 
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#tcarousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 100,
+    itemMargin: 5,
+    asNavFor: '#tslider',
+    directionNav:false,
+  });
+
+  $('#tslider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#tcarousel",
+    directionNav:false,
+  });
+  });
+</script>

@@ -10,6 +10,7 @@
   h1 {
   font-size: 25px;
   letter-spacing: 2px;
+  color: $second;
   }
 }
 
@@ -48,12 +49,8 @@
   padding: 0px 30px;
 
 }
-.button {
+.submit-btn {
 
-      width: 63%;
-
-
-    border: 1px solid #444444;
 }
 
 .button:hover {

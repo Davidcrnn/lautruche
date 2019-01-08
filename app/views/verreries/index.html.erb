@@ -4,16 +4,29 @@
   <% end %>
   <p><%= link_to "ACCUEIL", '/'  %> / VERRERIE </p>
   <h1>VERRERIE</h1>
+  <hr class="fancy-line"></hr>
   <div class="first-image verrerie-img">
 
   </div>
   <div class="link-products cursor">
-    <ul>
+    <ul class="hidden-xs hidden-sm">
       <li class="1">TOUS LES ARTICLES</li>
       <li class="2">VERRES</li>
       <li class="3">CARAFES</li>
       <li class="4">VASES</li>
     </ul>
+        <div class="btn-group link-products hidden-lg hidden-md">
+  <button type="button" class="btn-lire dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    TRIER PAR : <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu modal-drop">
+    <li class="1">Tous les articles</li>
+    <li class="2">Verres</li>
+    <li class="3">Carafes</li>
+      <li class="4">Vases</li>
+  </ul>
+</div>
+
   </div>
   <div class="div1 row">
       <% @verreries.each do |verre| %>
@@ -25,10 +38,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= verre.titre.upcase %></h2>
       <p><%= verre.prix %>€</p>
-    <%= link_to "Voir le produit", verrery_path(verre), class: "link-cover"  %>
+    <%= link_to verrery_path(verre) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
 
     </div>
       </div>
@@ -44,10 +59,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= verre.titre.upcase %></h2>
       <p><%= verre.prix %>€</p>
-      <%= link_to "Voir le produit", verrery_path(verre), class: "link-cover"  %>
+      <%= link_to verrery_path(verre) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -62,10 +79,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= verre.titre.upcase %></h2>
       <p><%= verre.prix %>€</p>
-      <%= link_to "Voir le produit", verrery_path(verre), class: "link-cover"  %>
+      <%= link_to verrery_path(verre) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -80,10 +99,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path verre.photo, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= verre.titre.upcase %></h2>
       <p><%= verre.prix %>€</p>
-      <%= link_to "Voir le produit", verrery_path(verre), class: "link-cover"  %>
+      <%= link_to verrery_path(verre) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>

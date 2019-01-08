@@ -76,12 +76,11 @@
 
     </div>
     <div class="col-xs-12 div col-sm-12 col-md-4 show-description">
-        <h1><%= @bijou.titre %></h1>
+        <h1><%= @bijou.titre.capitalize %></h1>
         <h3><%= @bijou.prix %>€</h3>
-        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assemble
-          <%= @bijou.description %></p>
+        <p><%= @bijou.description %></p>
         <div class="btn-dispo">
-          <button type="button" class="link-cover" data-toggle="modal" data-target="#exampleModal">DISPONIBILITÉS</button>
+          <button type="button" class="ai-btn" data-toggle="modal" data-target="#exampleModal"><%= image_tag "disponibilites.svg" %></button>
 
         </div>
     </div>
@@ -101,11 +100,13 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path objet.bphoto, height: 150, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= objet.titre.upcase %></h2>
       <p><%= objet.prix %>€</p>
 
-      <%= link_to "Voir le produit", bijou_path(objet), class: "link-cover"  %>
+      <%= link_to bijou_path(objet) do %>
+        <%= image_tag "voir-produit.svg" %>
+      <% end %>
 
 
     </div>

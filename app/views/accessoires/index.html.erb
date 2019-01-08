@@ -4,6 +4,7 @@
   <% end %>
   <p><%= link_to "ACCUEIL", '/'  %> / ACCESSOIRE </p>
   <h1>ACCESSOIRE</h1>
+  <hr class="fancy-line"></hr>
   <div class="first-image accessoires-img">
 
   </div>
@@ -17,10 +18,10 @@
   <button type="button" class="btn-lire dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     TRIER PAR : <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu">
-    <li class="1">TOUS LES ARTICLES</li>
-    <li class="2">ÉTOLES</li>
-    <li class="3">TABLIERS</li>
+  <ul class="dropdown-menu modal-drop">
+    <li class="1">Tous les articles</li>
+    <li class="2">Étoles</li>
+    <li class="3">Tabliers</li>
   </ul>
 </div>
   </div>
@@ -35,10 +36,13 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path accessoire.aphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= accessoire.titre.upcase %></h2>
       <p><%= accessoire.prix %>€</p>
-      <%= link_to "Voir le produit", accessoire_path(accessoire), class: "link-cover"  %>
+      <%= link_to accessoire_path(accessoire) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
+
     </div>
       </div>
       </div>
@@ -53,10 +57,13 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path accessoire.aphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= accessoire.titre.upcase %></h2>
       <p><%= accessoire.prix %>€</p>
-      <%= link_to "Voir le produit", accessoire_path(accessoire), class: "link-cover"  %>
+      <%= link_to accessoire_path(accessoire) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
+
     </div>
       </div>
       </div>
@@ -71,10 +78,13 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path accessoire.aphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= accessoire.titre.upcase %></h2>
       <p><%= accessoire.prix %>€</p>
-      <%= link_to "Voir le produit", accessoire_path(accessoire), class: "link-cover"  %>
+      <%= link_to accessoire_path(accessoire) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
+
     </div>
       </div>
       </div>

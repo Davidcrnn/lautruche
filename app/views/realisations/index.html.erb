@@ -4,9 +4,10 @@
   <% end %>
   <p><%= link_to "ACCUEIL", '/'  %> / RÉALISATIONS </p>
   <h1>NOS RÉALISATIONS</h1>
+  <hr class="fancy-line"></hr>
   <div class="row">
     <% @realisations.each do |realisation| %>
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-md-6">
       <div class="projet" style="background-image: url('<%= cl_image_path realisation.rphoto, height: 300, crop: :fill %>'">
         </div>
     </div>

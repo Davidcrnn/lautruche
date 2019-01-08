@@ -46,7 +46,7 @@
     <div class="row">
   <% @table.tpictures.each do |tpicture| %>
       <div class="col-xs-12 col-md-3">
-    <%= image_tag tpicture.tpicture_url(:tables_thumbnail) %><br>
+    <%= image_tag tpicture.tpicture_url(:tables_thumbnail) %>
     <%= link_to "Supprimez", tpicture_path(tpicture), :method => :delete, class: "btn-suppprimez" %><br>
 
       </div>

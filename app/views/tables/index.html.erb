@@ -4,17 +4,30 @@
   <% end %>
   <p><%= link_to "ACCUEIL", '/'  %> / TABLE </p>
   <h1>TABLE</h1>
+  <hr class="fancy-line"></hr>
   <div class="first-image verrerie-img">
 
   </div>
   <div class="link-products cursor">
-    <ul>
+    <ul class="hidden-xs hidden-sm">
       <li class="1">TOUS LES ARTICLES</li>
       <li class="2">ASSIETTES</li>
       <li class="3">COUVERTS</li>
       <li class="4">TASSES</li>
       <li class="5">PLATS</li>
     </ul>
+        <div class="btn-group link-products hidden-lg hidden-md">
+  <button type="button" class="btn-lire dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    TRIER PAR : <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu modal-drop">
+    <li class="1">Tous les articles</li>
+    <li class="2">Assiettes</li>
+    <li class="3">Couverts</li>
+      <li class="4">Tasses</li>
+      <li class="5">Plats</li>
+  </ul>
+</div>
   </div>
   <div class="div1 row">
       <% @tables.each do |table| %>
@@ -26,10 +39,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= table.titre.upcase %></h2>
       <p><%= table.prix %>€</p>
-      <%= link_to "Voir le produit", table_path(table), class: "link-cover"  %>
+      <%= link_to table_path(table) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -44,10 +59,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= table.titre.upcase %></h2>
       <p><%= table.prix %>€</p>
-      <%= link_to "Voir le produit", table_path(table), class: "link-cover"  %>
+      <%= link_to table_path(table) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -62,10 +79,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= table.titre.upcase %></h2>
       <p><%= table.prix %>€</p>
-      <%= link_to "Voir le produit", table_path(table), class: "link-cover"  %>
+      <%= link_to table_path(table) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -80,10 +99,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= table.titre.upcase %></h2>
       <p><%= table.prix %>€</p>
-      <%= link_to "Voir le produit", table_path(table), class: "link-cover"  %>
+      <%= link_to table_path(table) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -99,10 +120,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path table.tphoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= table.titre.upcase %></h2>
       <p><%= table.prix %>€</p>
-      <%= link_to "Voir le produit", table_path(table), class: "link-cover"  %>
+      <%= link_to table_path(table) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>

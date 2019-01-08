@@ -8,7 +8,9 @@
   position: relative;
   margin-top: 70px;
   h1 {
-    text-align: center
+    text-align: center;
+    font-size: 25px;
+    color: $second;
 
   }
 }
@@ -48,8 +50,8 @@
   }
 }
 .btn-suppprimez {
-    padding: 5px 15px;
-  margin: 20px 0;
+    padding: 0px 15px;
+
   background-color: red;
   color: white;
   &:hover {

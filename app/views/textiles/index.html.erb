@@ -4,11 +4,12 @@
   <% end %>
   <p><%= link_to "ACCUEIL", '/'  %> / TEXTILE</p>
   <h1>TEXTILE</h1>
+  <hr class="fancy-line"></hr>
   <div class="first-image textile-img">
 
   </div>
   <div class="link-products cursor">
-    <ul>
+    <ul class="hidden-sm hidden-xs">
       <li class="1">TOUS LES ARTICLES</li>
       <li class="2">COUSSINS</li>
       <li class="3">PLAIDS</li>
@@ -17,6 +18,20 @@
       <li class="6">RIDEAUX</li>
       <li class="7">TAPIS</li>
     </ul>
+        <div class="btn-group link-products hidden-lg hidden-md">
+  <button type="button" class="btn-lire dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    TRIER PAR : <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu modal-drop">
+    <li class="1">Tous les articles</li>
+    <li class="2">Coussins</li>
+    <li class="3">Plaids</li>
+      <li class="4">Dessous de lit</li>
+      <li class="5">Nappes</li>
+      <li class="5">Rideaux</li>
+      <li class="5">Tapis</li>
+  </ul>
+</div>
   </div>
   <div class="div1 row">
       <% @textiles.each do |textile| %>
@@ -28,10 +43,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
-      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+      <%= link_to textile_path(textile) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -47,10 +64,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
-      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+      <%= link_to textile_path(textile) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -65,10 +84,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
-      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+      <%= link_to textile_path(textile) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -83,10 +104,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
-      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+      <%= link_to textile_path(textile) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -102,10 +125,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
-      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+      <%= link_to textile_path(textile) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -120,10 +145,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
-      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+      <%= link_to textile_path(textile) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>
@@ -138,10 +165,12 @@
 
         <div class="carte" style="background-image: url('<%= cl_image_path textile.tephoto, height: 200, crop: :fill %>'">
         </div>
-      <div class="titre-prix">
+      <div class="zoom titre-prix">
       <h6><%= textile.titre.upcase %></h6>
       <p><%= textile.prix %>€</p>
-      <%= link_to "Voir le produit", textile_path(textile), class: "link-cover"  %>
+      <%= link_to textile_path(textile) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
     </div>
       </div>
       </div>

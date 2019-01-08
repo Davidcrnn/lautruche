@@ -1,5 +1,5 @@
 class Contact < ApplicationRecord
-  attribute :nom,      :validate => true
+  attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :telephone
   attribute :message
