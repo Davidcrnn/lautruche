@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(params[:contact_params])
+    @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
       flash.now[:error] = nil
@@ -14,12 +14,6 @@ class ContactsController < ApplicationController
       flash.now[:error] = "Le message n'a pas pu être envoyé. Veuillez réessayer."
       render :new
     end
-  end
-
-  private
-
-  def contact_params
-    params.require(:contact).permit(:name, :email, :message, :telephone)
   end
 
 end

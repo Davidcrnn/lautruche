@@ -15,7 +15,7 @@
 
 <div class="container-fluid container-produits">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6 border verrerie-img">
+    <div class="col-xs-12 col-sm-6 col-md-6 border img-responsive verrerie-img">
       <div class="content-container">
         <%= link_to "", verreries_path, class: "link"  %>
       <h1>VERRERIE</h1>
@@ -102,7 +102,7 @@
 <div class="row">
 <% @realisations.each do |realisation|  %>
   <div class="col-xs-12 col-md-6 border">
-    <div class="content-container"style="background-image: url('<%= cl_image_path realisation.rphoto, height: 230, crop: :fill %>'); background-size: cover; background-position: center;">
+    <div class="content-container img-responsive"style="background-image: url('<%= cl_image_path realisation.rphoto, height: 230, crop: :fill %>'); background-size: cover; background-position: center;">
       <%= link_to "", realisation_path(realisation), class: "link"  %>
       <h1><%= realisation.titre.upcase %></h1>
 </div>

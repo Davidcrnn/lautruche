@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr-FR">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +10,7 @@
     <%= favicon_link_tag 'favicon-autruches.ico' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all', :cache => true, :recursive => true %>
 
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
@@ -20,8 +20,8 @@
     <button onclick="topFunction()" class="scrollToTop" id="myBtn" title="Go to top"><%= image_tag "direction-arrow-top.svg"  %></button>
     <%= yield %>
     <%= render 'shared/footer' %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag 'application', :cache => true, :recursive => true %>
+    <%= javascript_pack_tag 'application', :cache => true, :recursive => true %>
 
 
   </body>
