@@ -32,11 +32,14 @@
   display: flex;
   align-items: center;
 
+
   &:hover {
     text-decoration: none;
   }
 }
-
+.modal-footer {
+  text-align:center;
+}
 .body-content p {
   font-size: 16px;
 }
