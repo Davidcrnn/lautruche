@@ -66,7 +66,10 @@ config.webpacker.check_yarn_integrity = false
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "lautruche_#{Rails.env}"
   config.action_mailer.perform_caching = false
-
+  config.public_file_server.headers = {
+  'Cache-Control' => "public, s-maxage=#{365.days.to_i}, maxage=#{180.days.to_i}",
+  'Expires' => "#{1.year.from_now.to_formatted_s(:rfc822)}"
+}
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
