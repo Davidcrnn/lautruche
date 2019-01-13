@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-xs-12 div col-sm-12 col-md-6">
       <!-- Place somewhere in the <body> of your page -->
-<div id="lslider" class="flexslider">
+<div id="slider" class="flexslider">
   <ul class="slides slides-container">
     <li><img src="<%= cl_image_path  @lifestyle.lphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
     <li>
@@ -42,7 +42,7 @@
     <!-- items mirrored twice, total of 12 -->
   </ul>
 </div>
-<div id="lcarousel" class="flexslider">
+<div id="carousel" class="flexslider">
   <ul class="slides">
     <li><img src="<%= cl_image_path  @lifestyle.lphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
     <li>
@@ -142,33 +142,11 @@
                   </div>
                   <div class="modal-footer">
 
-                    <button type="button" class="link-cover"> <%= link_to "Contactez nous par email", new_contact_path   %></button>
+                    <button type="button" class="link-cover ai-btn"> <%= link_to "Contactez nous par email", new_contact_path   %></button>
                   </div>
                 </div>
               </div>
             </div>
 
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#lcarousel').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    itemWidth: 100,
-    itemMargin: 5,
-    asNavFor: '#lslider',
-    directionNav:false,
-  });
 
-  $('#lslider').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    sync: "#lcarousel",
-    directionNav:false,
-  });
-  });
-</script>

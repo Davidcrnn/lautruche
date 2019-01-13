@@ -68,7 +68,6 @@
       </li>
       <li><a href="#">Qui sommes-nous ?</a>
       <ul>
-        <li><a href="#">Nous</a></li>
         <li><%= link_to "Boutiques", boutiques_path%></li>
         <li><%= link_to "Réalisations", realisations_path%></li>
         <li><%= link_to "Presse", presse_path%></li>
@@ -81,32 +80,5 @@
   </div>
 
 
-<script>
-  $(document).ready(function(){
-    $(".dropdown").hover(
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("slow");
-            $(this).toggleClass('open');
-        }
-    );
-});
-</script>
 
-<script>
-  $(document).ready(function(){
-    $(".hamburger a").click(function(){
-        $(".overlay").fadeToggle(200);
-       $(this).toggleClass('btn-open').toggleClass('btn-close');
-    });
-});
-$('.overlay').on('click', function(){
-    $(".overlay").fadeToggle(200);
-    $(".hamburger a").toggleClass('btn-open').toggleClass('btn-close');
-    open = false;
-});
-</script>
 
