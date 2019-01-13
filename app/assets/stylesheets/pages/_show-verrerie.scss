@@ -13,6 +13,7 @@
   }
 .show-description h1 {
   margin-top: 0;
+  font-size: 20px;
 }
 .center {
   text-align: center;
@@ -27,9 +28,10 @@
   border: none;
   margin: 0;
   padding: 0;
-  background-color: none;
+  background-color: white;
   img {
     height: 50px;
+    background-color: white;
   }
 }
 .nouveaute-container {

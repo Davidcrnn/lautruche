@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-xs-12 div col-sm-12 col-md-6">
       <!-- Place somewhere in the <body> of your page -->
-<div id="tslider" class="flexslider">
+<div id="slider" class="flexslider">
   <ul class="slides slides-container">
     <li><img src="<%= cl_image_path  @realisation.rphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
     <li>
@@ -42,7 +42,7 @@
     <!-- items mirrored twice, total of 12 -->
   </ul>
 </div>
-<div id="tcarousel" class="flexslider">
+<div id="carousel" class="flexslider">
   <ul class="slides">
     <li><img src="<%= cl_image_path  @realisation.rphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
     <li>
@@ -79,7 +79,7 @@
         <h1><%= @realisation.titre.capitalize %></h1>
         <p><%= @realisation.description %></p>
         <div class="btn-dispo">
-          <%= link_to "Intéressé", "/", class: "btn-dispo"  %>
+          <%= link_to "Intéressé", "/", class: "btn-dispo ai-btn"  %>
 
         </div>
     </div>
@@ -88,26 +88,4 @@
 </div>
 
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#tcarousel').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    itemWidth: 100,
-    itemMargin: 5,
-    asNavFor: '#tslider',
-    directionNav:false,
-  });
 
-  $('#tslider').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    sync: "#tcarousel",
-    directionNav:false,
-  });
-  });
-</script>
