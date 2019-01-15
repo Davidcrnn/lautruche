@@ -69,7 +69,7 @@
 }
 
 .luminaire-img {
-    background-image: image-url('luminaire-min.jpg');
+    background-image: image-url('luminaire-min1.jpg');
   background-size: cover;
   background-position: center;
   // opacity: 0.8;
@@ -128,7 +128,7 @@ hr.fancy-line, hr.fancy-line:before {
 @media screen and (max-width: 650px) {
   .produit-banner {
     padding: 0;
-    margin: 50px 0;
+    margin: 15px 0;
   }
   .container-produits{
     margin: 0;

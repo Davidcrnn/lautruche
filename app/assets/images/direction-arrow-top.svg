@@ -1,1 +1,12 @@
-<svg clip-rule="evenodd" fill-rule="evenodd" height="64" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 640 640" width="64" xmlns="http://www.w3.org/2000/svg"><path d="m309.405 53.1503-273.724 553.259 273.724-145.797zm19.5475-46.5951 306.252 618.988c2.45672 4.9725.40158 10.9962-4.55911 13.4411-3.02366 1.48821-6.38984 1.28742-9.14184-.188979l-.0236223.0354335-301.964-160.833-302 160.856-13.76-13.323 306.712-619.921.0472447.0118112c1.64175-3.31894 5.03156-5.63393 8.97649-5.63393 4.3347 0 8.04341 2.72838 9.46075 6.56701z" fill-rule="nonzero"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="Calque_1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64"
+	 style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#403F3F;}
+</style>
+<path class="st0" d="M30.9,5.3L3.6,60.6l27.4-14.6V5.3z M32.9,0.7l30.6,61.9c0.2,0.5,0,1.1-0.5,1.3c-0.3,0.1-0.6,0.1-0.9,0l0,0
+	L32,47.8L1.8,63.9l-1.4-1.3L31,0.6l0,0C31.2,0.2,31.6,0,31.9,0C32.4,0,32.8,0.3,32.9,0.7L32.9,0.7z"/>
+</svg>

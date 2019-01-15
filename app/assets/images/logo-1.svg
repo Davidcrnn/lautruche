@@ -1,1 +1,35 @@
-<svg enable-background="new 0 0 199 54" viewBox="0 0 199 54" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m-26 5h250v36h-250z" fill="none"/><text transform="translate(.165 25.9087)"><tspan font-family="'Didot-Bold'" font-size="27" opacity=".89" x="0" y="0">L</tspan><tspan font-family="'Didot-Bold'" font-size="17" opacity=".89" x="19.5" y="0">E</tspan><tspan font-family="'Didot-Bold'" font-size="18" opacity=".89" x="31.8" y="0">S</tspan><tspan font-family="'Didot-Bold'" font-size="27" opacity=".89" x="43.4" y="0"></tspan><tspan font-family="'Didot-Bold'" font-size="29" opacity=".89" x="50.9" y="5">A</tspan><tspan font-family="'Didot-Bold'" font-size="20" opacity=".89" x="72.9" y="0">U</tspan><tspan font-family="'Didot-Bold'" font-size="27" opacity=".89" x="88.5" y="0">T</tspan><tspan font-family="'Didot-Bold'" font-size="18" opacity=".89" x="107.5" y="2">R</tspan><tspan font-family="'Didot-Bold'" font-size="19" opacity=".89" x="120.5" y="0">U</tspan><tspan font-family="'Didot-Bold'" font-size="27" opacity=".89" x="135.3" y="5">C</tspan><tspan font-family="'Didot-Bold'" font-size="17" opacity=".89" x="154.8" y="0">H</tspan><tspan font-family="'Didot-Bold'" font-size="20" opacity=".89" x="169" y="0">E</tspan><tspan font-family="'Didot-Bold'" font-size="22" opacity=".89" x="183.4" y="3">S</tspan></text><path d="m-26 37h250v17h-250z" fill="none"/><text font-family="'Didot-Italic'" font-size="9" opacity=".85" transform="translate(44.1772 43.8398)">Meubles . Objets . Décoration</text></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 199 54" style="enable-background:new 0 0 199 54;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{opacity:0.89;fill:#403F3F;enable-background:new    ;}
+	.st2{font-family:'Didot-Bold';}
+	.st3{font-size:27px;}
+	.st4{font-size:17px;}
+	.st5{font-size:18px;}
+	.st6{font-size:29px;}
+	.st7{font-size:20px;}
+	.st8{font-size:19px;}
+	.st9{font-size:22px;}
+	.st10{opacity:0.85;fill:#403F3F;enable-background:new    ;}
+	.st11{font-family:'Didot-Italic';}
+	.st12{font-size:9px;}
+</style>
+<path class="st0" d="M-26,5h250v36H-26V5z"/>
+<text transform="matrix(1 0 0 1 0.165 25.9087)" class="st1 st2 st3">L</text>
+<text transform="matrix(1 0 0 1 19.665 25.9087)" class="st1 st2 st4">E</text>
+<text transform="matrix(1 0 0 1 31.965 25.9087)" class="st1 st2 st5">S</text>
+<text transform="matrix(1 0 0 1 51.065 30.9087)" class="st1 st2 st6">A</text>
+<text transform="matrix(1 0 0 1 73.065 25.9087)" class="st1 st2 st7">U</text>
+<text transform="matrix(1 0 0 1 88.665 25.9087)" class="st1 st2 st3">T</text>
+<text transform="matrix(1 0 0 1 107.665 27.9087)" class="st1 st2 st5">R</text>
+<text transform="matrix(1 0 0 1 120.665 25.9087)" class="st1 st2 st8">U</text>
+<text transform="matrix(1 0 0 1 135.465 30.9087)" class="st1 st2 st3">C</text>
+<text transform="matrix(1 0 0 1 154.965 25.9087)" class="st1 st2 st4">H</text>
+<text transform="matrix(1 0 0 1 169.165 25.9087)" class="st1 st2 st7">E</text>
+<text transform="matrix(1 0 0 1 183.565 28.9087)" class="st1 st2 st9">S</text>
+<path class="st0" d="M-26,37h250v17H-26V37z"/>
+<text transform="matrix(1 0 0 1 44.1772 43.8398)" class="st10 st11 st12">Meubles . Objets . Décoration</text>
+</svg>
