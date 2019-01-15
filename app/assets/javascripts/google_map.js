@@ -18,12 +18,10 @@ function initMap() {
 
     // Info window content
     var infoWindowContent = [
-        ['<div class="info_content">' +
-        '<h3>Les Autruches</h3>' +
-        '<p>The Brooklyn Museum is an art museum located in the New York City borough of Brooklyn.</p>' + '</div>'],
-        ['<div class="info_content">' +
+        ['<div class="info_content modal-content">' +
+        '<h3>Les Autruches</h3>'+'</div>'],
+        ['<div class="info_content modal-content">' +
         '<h3>Les petites autruches</h3>' +
-        '<p>The Brooklyn Public Library (BPL) is the public library system of the borough of Brooklyn, in New York City.</p>' +
         '</div>'],
     ];
 

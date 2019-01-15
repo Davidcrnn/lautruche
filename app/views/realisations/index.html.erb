@@ -8,8 +8,14 @@
   <div class="row">
     <% @realisations.each do |realisation| %>
     <div class="col-xs-12 col-md-6">
-      <div class="projet" style="background-image: url('<%= cl_image_path realisation.rphoto, height: 300, crop: :fill %>'">
+      <div class="projet" style="background-image: url('<%= cl_image_path realisation.rphoto, height: 300, crop: :fill %>')">
         </div>
+        <div class="zoom titre-prix">
+      <h6><%= realisation.titre.upcase %></h6>
+      <%= link_to realisation_path(realisation) do %>
+      <%= image_tag "voir-projet.svg" %>
+      <% end %>
+    </div>
     </div>
     <% end %>
   </div>

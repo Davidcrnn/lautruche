@@ -45,6 +45,16 @@
   color: $second;
 }
 
+.modal-content {
+  border: none !important;
+  background-color: white;
+  box-shadow: none;
+  h3 {
+  font-size: 18px;
+  color: $second;
+  border: none;
+}
+}
 // Media Queries
 
 @media only screen and (max-width: 600px) {
@@ -60,5 +70,14 @@
   }
   .titre {
     margin: 30px 70px;
+  }
+  .container-text-autruches h3 {
+    margin-top: 15px;
+  }
+  #mapCanvas {
+    margin-top: 15px;
+  }
+  .container-text-autruches ul li {
+    font-size: 13px;
   }
 }

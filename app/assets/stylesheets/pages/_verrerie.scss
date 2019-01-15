@@ -37,8 +37,11 @@
 .carte {
   border: 10px solid 0;
   height: 250px;
-  box-shadow: 2px 3px 4px #9e9b9ba6;
+  box-shadow: 2px 3px 4px gray;
   background-size: cover;
+  -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size:cover;
   background-position: center;
   margin: 0;
   padding: 20px 20px;
@@ -111,6 +114,9 @@ ul.dropdown-menu {
   }
   .nouveaute-container {
     margin: 0;
+  }
+  .first-image {
+    height: 250px;
   }
 }
 
