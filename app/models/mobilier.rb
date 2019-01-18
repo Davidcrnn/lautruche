@@ -5,6 +5,7 @@ class Mobilier < ApplicationRecord
   validates :visible, inclusion: {in: [true, false]}
   validates :categorie, inclusion: {in: ["Canapé", "Fauteuil", "Chaise", "Table basse", "Banc"]}, presence: true
   has_many :mpictures, :dependent => :destroy
+  validates :mphoto, presence: true
   accepts_nested_attributes_for :mpictures, allow_destroy: true
   mount_uploader :mphoto, MphotoUploader
 end

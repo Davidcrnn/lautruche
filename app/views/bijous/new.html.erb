@@ -1,5 +1,6 @@
  <div class="container container-margin">
   <h1>AJOUTER UN OBJET</h1>
+  <hr class="fancy-line"></hr>
 <div class="row">
   <div class="col-md-12">
 <%= simple_form_for(@bijou, :html => { multipart: true }) do |f| %>
@@ -19,7 +20,7 @@
     <div class="champs">
       <%= f.input :titre, label: 'TITRE' %>
       <%= f.input :description, label: 'DESCRIPTION' %>
-      <%= f.input :categorie, collection: ["Bague", "Colier", "Boucle d'oreille", "Bracelet"], label: 'CATEGORIE', placeholder: "Choisissez une catégorie" %>
+      <%= f.input :categorie, collection: ["Bague", "Collier", "Boucle d'oreille", "Bracelet"], label: 'CATEGORIE', placeholder: "Choisissez une catégorie" %>
       <%= f.input :prix, label: 'PRIX' %>
       <%= f.input :visible, as: :select, label: 'VISIBLE' %>
       <%= f.input :bphoto, label: "PHOTO PRINCIPALE", placeholder: 'Oui' %>
