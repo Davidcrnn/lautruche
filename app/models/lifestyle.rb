@@ -5,7 +5,7 @@ class Lifestyle < ApplicationRecord
   validates :visible, inclusion: {in: [true, false]}
   validates :categorie, inclusion: {in: ["Miroir", "Bougie", "Bougeoire", "Cadre"]}, presence: true
   has_many :lpictures, :dependent => :destroy
-  validates :lphoto, presence: true
+
   accepts_nested_attributes_for :lpictures, allow_destroy: true
   mount_uploader :lphoto, LphotoUploader
 end

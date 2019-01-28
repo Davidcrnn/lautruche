@@ -22,7 +22,12 @@
   font-size: 13px;
 
 }
+@media screen and (min-height: 1200px) {
 
+.realisation-container {
+  min-height: 700px;
+}
+}
 .realisation-container p {
 
     font-size: 13px;
