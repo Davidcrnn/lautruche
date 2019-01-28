@@ -5,7 +5,7 @@ validates :titre, presence: true
   validates :visible, inclusion: {in: [true, false]}
   validates :categorie, inclusion: {in: ["Coussin", "Plaid", "Dessous de lit", "Nappe", "Rideau", "Tapis"]}, presence: true
   has_many :tepictures, :dependent => :destroy
-  validates :tephoto, presence: true
+
   accepts_nested_attributes_for :tepictures, allow_destroy: true
   mount_uploader :tephoto, TephotoUploader
 end
