@@ -13,6 +13,7 @@
       <li class="1">TOUS LES ARTICLES</li>
       <li class="2">ÉTOLES</li>
       <li class="3">TABLIERS</li>
+      <li class="4">ROBES</li>
     </ul>
 <div class="btn-group link-products hidden-lg hidden-md">
   <button type="button" class="btn-lire dropdown-toggle ai-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,6 +23,7 @@
     <li class="1">Tous les articles</li>
     <li class="2">Étoles</li>
     <li class="3">Tabliers</li>
+    <li class="4">Robes</li>
   </ul>
 </div>
   </div>
@@ -73,6 +75,27 @@
   <div class="div3 row">
       <% @accessoires.each do |accessoire| %>
        <% if accessoire.visible === true && accessoire.categorie === "Tablier" %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path accessoire.aphoto, height: 200, crop: :fill %>')">
+        </div>
+      <div class="zoom titre-prix">
+      <h6><%= accessoire.titre.upcase %></h2>
+      <p><%= accessoire.prix %>€</p>
+      <%= link_to accessoire_path(accessoire) do %>
+      <%= image_tag "voir-produit.svg" %>
+      <% end %>
+
+    </div>
+      </div>
+      </div>
+  <% end %>
+  <% end %>
+  </div>
+    <div class="div4 row">
+      <% @accessoires.each do |accessoire| %>
+       <% if accessoire.visible === true && accessoire.categorie === "Robe" %>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
