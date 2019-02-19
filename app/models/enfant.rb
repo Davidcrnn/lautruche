@@ -3,7 +3,7 @@ class Enfant < ApplicationRecord
   validates :description, presence: true
   validates :prix, presence: true
   validates :visible, inclusion: {in: [true, false]}
-  validates :categorie, inclusion: {in: ["Doudoune", "Textile", "Deguisement"]}, presence: true
+  validates :categorie, inclusion: {in: ["Doudou", "Textile", "Deguisement"]}, presence: true
   has_many :epictures, :dependent => :destroy
 
   accepts_nested_attributes_for :epictures, allow_destroy: true

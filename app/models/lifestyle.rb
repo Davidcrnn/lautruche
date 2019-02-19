@@ -3,7 +3,7 @@ class Lifestyle < ApplicationRecord
   validates :description, presence: true
   validates :prix, presence: true
   validates :visible, inclusion: {in: [true, false]}
-  validates :categorie, inclusion: {in: ["Miroir", "Bougie", "Bougeoire", "Cadre"]}, presence: true
+  validates :categorie, inclusion: {in: ["Miroir", "Bougie", "Bougeoir", "Cadre"]}, presence: true
   has_many :lpictures, :dependent => :destroy
 
   accepts_nested_attributes_for :lpictures, allow_destroy: true
