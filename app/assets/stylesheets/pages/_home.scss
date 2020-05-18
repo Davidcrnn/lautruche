@@ -36,13 +36,13 @@
     font-size: 20px;
   }
 .verrerie-img {
-  background-image: image-url('verrerie.jpg');
+  background-image: image-url('verre.jpg');
   background-size: cover;
   background-position: center;
   // opacity: 0.8;
 }
 .table-img {
-    background-image: image-url('table-min.jpg');
+    background-image: image-url('assiette.jpg');
 
   background-size: cover;
   background-position: center;
@@ -64,7 +64,7 @@
 }
 
 .mobilier-img {
-    background-image: image-url('mobilier-min.jpg');
+    background-image: image-url('mobilier.jpg');
   background-size: cover;
   background-position: center;
   // opacity: 0.8;
@@ -78,14 +78,14 @@
 }
 
 .enfants-img {
-    background-image: image-url('enfant-min.jpg');
+    background-image: image-url('enfant.jpg');
   background-size: cover;
-  background-position: center;
+  // background-position: center;
   // opacity: 0.8;
 }
 
 .accessoires-img {
-    background-image: image-url('accessoire-min.jpg');
+    background-image: image-url('accessoire.jpg');
   background-size: cover;
   background-position: center;
   // opacity: 0.8;
@@ -98,7 +98,7 @@
 }
 
 .bijoux-img {
-  background-image: image-url('bijou-min.jpg');
+  background-image: image-url('bijou.jpg');
   background-size: cover;
   background-position: center;
 }
